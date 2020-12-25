@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+	<title></title>
+  <link rel="stylesheet" href="../css/tools.css">
+</head>
+<body>
+  <div id="cover"></div>
+  <div class="main">
+  </div>
+</body>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/tools.js"></script>
+<script type="text/javascript" src="../js/base64.js"></script>
+<script type="text/javascript" src="../js/jquery.mloading.js"></script>
+<script type="text/javascript" src="../js/jquery.session.js"></script>
+<script type="text/javascript">
+  (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          if (clientWidth > 750) clientWidth = 750;
+          docEl.style.fontSize = (clientWidth / 3.75) + 'px';
+        };
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  var b = new Base64();
+  var hmac = tools.queryString().hmac;
+  var code = tools.queryString().code;
+  var url = tools.queryString().url;
+  url = b.decode(decodeURIComponent(url));
+  url = url.substring(0,url.length-1);
+  $(function(){
+    tools.Loading.show('Loading...');
+    if(hmac&&code&&url){
+      $.ajax(
+        {
+          type:'post',
+          url : 'https://online.bcdtravel.cn/SystemAPI_PostSend/api/SystemAPI/PostSend',
+          dataType : 'json',
+          data:{
+              url: url+"/SystemService.svc/GetAliPayLocalUrl",
+              jsonStr:'{"hmac":"'+hmac+'","companyID":"'+code+'"}'
+          },
+          success : function(data) {
+              var res = JSON.parse(data);
+              console.log(res);
+              if(res.code==200){
+                $('body').append(res.data);
+              }else{
+                alert(res.message);
+              }
+          },
+          error : function() {
+            // alert('fail');
+          }
+        }
+      );
+    }
+  })
+</script>
+</html>

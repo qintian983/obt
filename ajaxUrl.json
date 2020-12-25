@@ -1,0 +1,4 @@
+{
+	"ajaxUrl":"https://online.bcdtravel.cn/SystemAPI_PostSend/api/SystemAPI/PostSend",
+	"SelectUrl":"http://online.bcdtravel.cn:8088/SystemService.svc/SelectUrlPost"
+}

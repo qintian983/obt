@@ -1,0 +1,211 @@
+/*公共样式*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td, select, img {
+    margin: 0;
+    padding: 0;
+}
+input{
+    font-size: 13px;
+}
+div{
+    /*box-sizing: border-box;*/
+}
+input{
+    outline:none;
+}
+input::-ms-clear{display:none;}
+input::-ms-reveal{display:none;}
+input:focus::-webkit-contacts-auto-fill-button{
+    opacity: 0;
+}
+body{
+    background-color: #fff;
+    font-family:Arial,Verdana,Sans-serif;
+}
+li{
+  list-style: none;
+}
+.flexRow{
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-direction: row; /* Safari 6.1+ */
+    display: flex;
+    flex-direction: row;
+}
+.flexWrap{
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-direction: row; /* Safari 6.1+ */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.flexRowReverse{
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-direction: row-reverse; /* Safari 6.1+ */
+    display: flex;
+    flex-direction: row-reverse;
+}
+.ellipsis{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
+.autoScrollX{
+    box-sizing: border-box;
+    overflow-x: scroll;
+    white-space: nowrap;
+    overflow-y: hidden;
+}
+.autoScrollY{
+    box-sizing: border-box;
+    overflow-y: scroll;
+    /*white-space: nowrap;*/
+    overflow-x: hidden;
+}
+.omit{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+/*垂直居中*/
+.vetically{
+    position: relative;
+    top: 40%;
+    transform: translateY(-50%);
+}
+/*阴影*/
+#cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 100;
+    display: none;
+}
+/*头部样式*/
+.autoCenter{
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+.pageHeader{
+    width: 100%;
+    /*height: 112px;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    background-color: #fff;
+}
+#main{
+    width: 100%;
+    margin-top: 112px;
+}
+.logoImg{
+    width: 150px;
+    height: 45px;
+    margin:15px 0 0 25px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url('../index/images/logoImg.jpg');
+}
+.headerContact{
+    min-width: 60px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+    right: 130px;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #041e5b;
+    padding: 0 7px;
+}
+.headerContactBody{
+    width: 200px;
+    min-height: 40px;
+    box-sizing: border-box;
+    padding: 10px;
+    line-height: 20px;
+    background-color: #fff;
+    /*border:1px solid #c2c2c2;*/
+    position: absolute;
+    top: 45px;
+    right:130px;
+    z-index: 20;
+    display: none;
+    font-size: 14px;
+    color: #041e5b;
+}
+.lanChange{
+    line-height: 45px;
+    font-size: 14px;
+    color: #EF853A;
+    position: absolute;
+    right: 61px;
+    top: 0;
+    cursor:pointer;
+    text-decoration: underline;
+    cursor: pointer;
+    position: absolute;
+}
+.logOutChange{
+    line-height: 45px;
+    font-size: 14px;
+    color: #EF853A;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    text-decoration: underline;
+    cursor: pointer;
+}
+/*菜单*/
+.menu{
+    width: 100%;
+    /*height: 40px;*/
+    font-size: 16px;
+    /*font-family: PingFangSC-Regular;*/
+    background: #1E66AE;
+    margin-top: 12px;
+}
+.menusLi{
+    width: 110px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    cursor:pointer;
+}
+.menu .active{
+    background-color: #F58A00;
+}
+.searchUl{
+    position: absolute;
+    width: 110px;
+    left: 110px;
+    background-color: #fff;
+    display: none;
+    z-index: 10;
+    background-color: #E9F0F6;
+    z-index: 220;
+}
+.searchUl li{
+    width: 100%；
+    height：45px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 40px;
+}
+.searchUl li:hover{
+    color: #1E66AE;
+    cursor: pointer;
+    font-weight: bold;
+}

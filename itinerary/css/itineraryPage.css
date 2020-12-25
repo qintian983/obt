@@ -1,0 +1,333 @@
+.tittle{
+	width: 100%;
+	height: 88px;
+	font-size:36px;
+	font-weight: 600;
+	margin-top: 55px;
+	text-align: center;
+	position: relative;
+}
+.tittleInfo{
+	width: 1160px;
+	margin-left: 20px;
+	height: 20px;
+	line-height: 20px;
+	border-bottom: 2px solid rgba(216,216,216,1);
+	font-size: 13px;
+	color: #333;
+	/* 宽度自适应 */
+	display:-moz-box;
+	display:-webkit-box;
+	display:box;
+}
+	/* style="width:20%;" */
+.tittleInfo div{
+	-moz-box-flex:1;
+	-webkit-box-flex:1;
+	box-flex:1;
+	text-align: center;
+}
+.tittleInfo div:first-of-type{
+	text-align: left;
+}
+.tittleInfo div:last-of-type{
+	text-align: right;
+}
+.logo,.companyLogo{
+	width: 280px;
+	height: 100px;
+	position: absolute;
+	top: -36px;
+}
+.logo{
+	left: 20px;
+}
+.companyLogo{
+	right: 20px;
+}
+.headerInfo{
+	width: 100%;
+	min-height: 180px;
+	box-sizing: border-box;
+	padding-left: 20px;
+}
+.headerInfoLi{
+	width: 50%;
+	min-height: 45px;
+	line-height: 45px;
+	font-size: 18px;
+}
+.customerInfoLi{
+	width: 100%;
+	min-height: 45px;
+	line-height: 45px;
+	font-size: 18px;
+}
+.headerInfoLiTittle{
+	width: 150px;
+}
+.headerInfoLiBody{
+	width: 400px;
+	min-height: 45px;
+}
+.headerRemind{
+	width: 100%;
+	height: 50px;
+	margin-top: 10px;
+	box-sizing: border-box;
+	padding-left: 20px;
+	position: relative;
+}
+.orderFare{
+	position: absolute;
+	right: 21px;
+	top: 0;
+	font-size: 18px;
+	color: #000;
+    height: 50px;
+    line-height: 50px;
+}
+.airInfo,.hotelInfo,.trainInfo,.carInfo,.otherInfo{
+	width: 1160px;
+	margin-left: 20px;
+	min-height: 40px;
+	box-sizing: border-box;
+	margin-top: 20px;
+	padding-bottom: 10px;
+}
+.airInfo{
+	background-color: #041E5B;
+}
+.hotelInfo{
+	background-color: #415D84;
+}
+.trainInfo{
+	background-color: #4B7EC4;
+}
+.carInfo{
+	background-color: #ED8322;
+}
+.otherInfo{
+	background-color: #FFB565;
+}
+.infoTittle{
+	color: #fff;
+	font-size: 20px;
+	line-height: 40px;
+	height: 40px;
+	box-sizing: border-box;
+	padding-left: 10px;
+}
+.airInfoBody,.hotelInfoBody,.trainInfoBody,.carInfoBody,.otherInfoBody{
+	width: 1140px;
+	min-height: 100px;
+	margin-left: 10px;
+	box-sizing: border-box;
+	background-color: rgba(240,240,240,1);
+}
+.customerRemark{
+	background-color: #f7f7f7;
+	color: #666;
+	font-size: 14px;
+	width: 1010px;
+}
+.remarkTittle{
+	width: 120px;
+	padding-left: 10px;
+}
+/*机票*/
+.airlineName,.airlineInfo{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+	box-sizing: border-box;
+	padding-left: 20px;
+}
+.airlineName{
+	color: #041e5b;
+}
+.airlineInfo{
+	color: #666;
+}
+.airlineInfoLi,.railInfoLi{
+	width: 20%;
+}
+.airlineInfoLiTittle{
+	width: 80px;
+}
+.flightFeeInfo,.trainFeeInfo{
+	width: 100%;
+	height: 62px;
+	line-height: 62px;
+	box-sizing: border-box;
+	padding-left: 20px;
+	color: #666;
+	font-size: 16px;
+	background:#fff;
+	border-bottom: 1px solid #d8d8d8;
+}
+.flightLiInfo{
+	width: 100%;
+	min-height: 450px;
+	line-height: 40px;
+	font-size: 16px;
+	background-color: #fff;
+}
+.flightLiInfoTittle{
+	width: 200px;
+	height: 40px;
+	padding-left: 20px;
+	color: #666;
+}
+.flightLiInfoBody{
+	width: 900px;
+	min-height: 40px;
+    color: #000;
+    word-wrap: break-word;
+}
+.tripInfo{
+	min-height: 198px;
+	position: relative;
+	border-bottom: 1px solid #d8d8d8;
+}
+.airportInfo{
+	width: 33%;
+	min-height: 55px;
+	line-height: 55px;
+	font-size: 22px;
+	color: #041E5B;
+	text-align: center;
+	word-break: break-all;
+}
+.line1,.line2{
+	width: 100px;
+	height: 2px;
+	background-color: #5a88c6;
+	position: absolute;
+	top: 83px;
+}
+.line1{
+	left: 387px;
+}
+.line2{
+	left: 654px;
+}
+.Durnturn{
+	width: 150px;
+	line-height: 33px;
+	height: 33px;
+	font-size: 24px;
+	color: #5a88c6;
+	text-align: center;
+	position: absolute;
+	top: 70px;
+	left: 495px;
+}
+/*酒店*/
+.hotelLiInfo{
+	width: 100%;
+	min-height: 100px;
+	line-height: 50px;
+	font-size: 16px;
+	box-sizing: border-box;
+	padding-left: 20px;
+}
+.hotelInfoTittle{
+	width: 100px;
+	color: #666;
+}
+.hotelLiBody{
+	width: 100%;
+	min-height: 250px;
+	line-height: 40px;
+	font-size: 16px;
+	background-color: #fff;
+}
+.hotelLiTittle{
+	width: 200px;
+	height: 40px;
+	padding-left: 20px;
+	color: #666;
+}
+/*火车*/
+.railInfo{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+	box-sizing: border-box;
+	padding-left: 20px;
+	color: #666;
+}
+.trainLiBody{
+	width: 100%;
+	min-height: 80px;
+	line-height: 40px;
+	font-size: 16px;
+	background-color: #fff;
+}
+.trainLiTittle{
+	width: 200px;
+	height: 40px;
+	padding-left: 20px;
+	color: #666;
+}
+/*租车*/
+.carLiBody{
+	width: 100%;
+	min-height: 80px;
+	line-height: 40px;
+	font-size: 16px;
+	background-color: #fff;
+}
+.carLiTittle{
+	width: 200px;
+	height: 40px;
+	padding-left: 20px;
+	color: #666;
+}
+/*其他服务*/
+.otherLiBody{
+	width: 100%;
+	min-height: 80px;
+	line-height: 40px;
+	font-size: 16px;
+	background-color: #fff;
+}
+.otherLiTittle{
+	width: 200px;
+	height: 40px;
+	padding-left: 20px;
+	color: #666;
+}
+/* 10-24修改 */
+.black3{
+	color: #333333;
+	font-weight: bold;
+}
+.newFeeInfo{
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	height: 40px;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 20px;
+    color: #666;
+    font-size: 16px;
+    background: #fff;
+}
+.taxInfoBody{
+	min-height: 40px;
+	color: #000;
+	word-wrap: break-word;
+}
+.taxTittle{
+	width: 100px;
+    height: 40px;
+    color: #666;
+	text-align: right;
+	padding-right: 20px;
+}

@@ -1,0 +1,31 @@
+.mainBackColor{
+	background-color: #041e5b;
+}
+.btnBackColor{
+	background-color: #f6aa25;
+}
+.mainFontColor{
+	color: #041e5b;
+}
+.activeFontColor{
+	/*color: #f6aa25;*/
+	color: #f58a00;
+}
+.tittleBackColor{
+	background-color: #041e5b;
+}
+body{
+	font-family:Arial,Verdana,Sans-serif;
+}
+.progressActiveBack{
+	background-color: #f58a00;
+}
+.progressActiveFont{
+	color: #f58a00;
+}
+.progressBackColor{
+	background-color: #9b9b9b;
+}
+.specificFontColor{
+	color: #041e5b;
+}

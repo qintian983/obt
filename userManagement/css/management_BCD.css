@@ -1,0 +1,250 @@
+
+#main{
+	padding-top: 10px;
+}
+.autocenter{
+		width: 1200px;
+		margin: auto;
+	}
+	.clearfix::after{
+		content: " ";
+		display: block;
+		clear: both;
+	}
+	
+	
+	.leftSearch{
+		    padding: 17px 20px;
+		    font-size: 14px;
+		    background-color: #F7F7F7;
+		    margin: 10px 0;
+	}
+	.searcGroup,.btnGroup{
+		float: left;
+		line-height: 0;
+	}
+	.searcGroup{
+		display: inline-block;
+		height: 26px;
+		line-height: 26px;
+	}
+	.searcGroup input{
+		width: 234px;
+		margin-left: 8px;
+		height: 26px;
+		line-height: 26px;
+		box-sizing: border-box;
+		border: 1px solid #CCCCCC;
+		border-radius: 4px;
+		text-indent: 5px;
+		font-size: 12px;
+	}
+	.btn{
+		display: inline-block;
+		height: 26px;
+		line-height: 26px;
+		width: 80px;
+		text-align: center;
+		border-radius: 4px;
+		overflow: hidden;
+		/* margin-left: 12px; */
+		margin-left: 9px;
+		background-color: #041E5B;
+		color: #FFFFFF;
+		cursor: pointer;
+		
+	}
+	.delete{
+		background-color: #FFFFFF;
+		border: 1px solid #999999;
+		color: #999999;
+		cursor: default;
+	}
+	.checkedDelete{
+		color: #FF7A00;
+		border-color: #FF7A00;
+	}
+	.ml40{
+		margin-left: 20px;
+	}
+	
+	/* 表格 */
+	.tableGroup{
+		border:1px solid rgba(204,204,204,1);
+	}
+	.userList{
+		width: 100%;
+		color: #333333;
+		font-size: 14px;
+	}
+	.userList tr:first-of-type{
+		background-color: #F7F7F7;
+		color: #333333;
+		font-size: 14px;
+		font-weight: 600;
+	}
+	 .userList td{
+			height: 36px;
+			line-height: 36px;
+			/* border-top:1px solid #F3F3F3; */
+			/* border-left:1px solid #F3F3F3; */
+		border-bottom: 1px solid #F3F3F3;
+		}
+	.userList tr td:first-of-type{
+		text-align: center;
+	}
+	.userList tr:first-of-type td{
+		height: 40px;
+	}
+	.noDate td{
+		border: none ;
+	}
+	.tableGroup tr:nth-of-type(16) td{
+		border-bottom: none;
+	} 
+	
+	
+	.editBtn,.deleteBtn{
+		color: #2D6BD2;
+		cursor: pointer;
+		font-size: 14px;
+		margin-right: 20px;
+	
+	}
+	/* 翻页 */
+	.pageTurning{
+		height: 46px;
+		line-height: 46px;
+		text-align: center;
+		border-top: 1px solid #F3F3F3;
+	}
+	.turnBtn{
+		display: inline-block;
+		width:60px;
+		text-align: center;
+		height:26px;
+		line-height: 26px;
+		border-radius:4px;
+		border: 1px solid #041E5B;
+		cursor: pointer;
+	}
+	
+	/* 按钮状态 */
+	.checkePage{
+		background-color: #041E5B;
+		color: #FFFFFF;
+	}
+	.displayBtn{
+		color: #999999;
+		background-color: #F7F7F7;
+		border: none;
+	}
+	.checkDelete{
+		cursor: pointer;
+		color: #FF7A00;
+		border-color: #FF7A00;
+	}
+	
+/* 添加 新增用户 */
+.fixGroup{
+				position: fixed;
+				top: 0;bottom: 0;
+				left: 0;right: 0;
+				background-color: rgba(0,0,0,0.4);
+				z-index: 21;
+			}
+			.addPop{
+				/* height: 251px; */
+				/* width: 640px; */
+				width: 620px;
+				background-color: #FFFFFF;
+				border-radius: 16px;
+				overflow: hidden;
+				margin: auto;
+				margin-top: 180px;
+				padding: 0 30px;
+				padding-bottom: 20px;
+				font-size: 14px;
+			}
+			.addTitle{
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				color: #094B90;
+				font-size: 20px;
+				font-weight: 500;
+				position: relative;
+			}
+			
+			.closeBtn{
+				position: absolute;
+				right: 0;
+				width: 30px;
+				height: 100%;
+				cursor: pointer;
+				background-image: url(../images/icon_cha.png);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 20px auto;
+			}
+			.borderBottomDashed{
+				width: 100%;
+				height: 1px;
+				background-image: linear-gradient(to right, #979797 0%, #979797 50%, transparent 50%);
+				background-size: 8px 1px;
+				background-repeat: repeat-x;
+				margin-bottom: 20px;
+			}
+			.infoLeft,.infoRight{
+				width: 50%;
+				/* height: 100px; */
+				float: left;
+			}
+			.infoTitle,.infoInput{
+				/* float: left; */
+				float: right;
+			}
+			.infoLeft .infoInput{
+				float: left;
+			}
+			.infoLeft .infoTitle{
+				float: left;
+			}
+			.infoTitle div{
+				height: 28px;
+				line-height: 28px;
+				margin-bottom: 12px;
+			}
+			.infoInput{
+				margin-left: 8px;
+				max-width: 190px;
+			}
+			.infoInput .inputText{
+				width: 100%;
+				height: 26px;
+				border:1px solid rgba(204,204,204,1);
+				padding-top: 0;
+				padding-bottom: 0;
+				border-radius: 4px;
+				margin-bottom: 12px;
+				outline: none;
+				box-sizing: border-box;
+				text-indent: 5px;
+			}
+			.addbtnGroup{
+				width: 100%;
+				clear: both;
+				padding-top: 9px;
+			}
+			.addBtn{
+				width:286px;
+				text-align: center;
+				height:36px;
+				line-height: 36px;
+				background:rgba(246,170,36,1);
+				border-radius:4px;	
+				color: #FFFFFF;
+				font-size: 16px;
+				margin: auto;
+				cursor: pointer;
+			}

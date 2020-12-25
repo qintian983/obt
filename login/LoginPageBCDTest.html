@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<title>Travel Portal,企业差旅管理专家</title>
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="../css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/bgstretcher.css">
+	<link rel="stylesheet" type="text/css" href="../css/jquery.mloading.css">
+	
+	<style type="text/css">
+		.right-bottom{
+			color:#fff;
+			font-size: 14px;
+			text-align: left;
+		}
+		a{
+			color:#EF853A;
+			text-decoration: underline;
+			margin: 0 5px 0 5px;
+			cursor: pointer;
+		}
+		#cover{
+			background: rgba(0, 0, 0);
+		}
+		/* 记住密码 */
+		label[name="Remember"]{
+			position: absolute;
+			height: 20px;
+			line-height: 20px;
+			padding-left: 20px;
+		}
+		label[name="Remember"] input{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			opacity: 0;
+		}
+		.checkboxSpan{
+			/* display: inline-block; */
+			height: 18px;
+			width: 18px;
+			background-color: transparent;
+			position: absolute;
+			top: 1px;
+			left: 0;
+			background-image: url(../images/box.png);
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.checked{
+			background-image: url(../images/checkebox.png);
+		}
+	</style>
+</head>
+<body>
+	<div id="cover"></div>
+	<div class="loginPop"><div class="loginPopTittle"><span class="tittleText"></span><span class="closePop">x</span></div>
+	  <div class="popBody"></div>
+    </div>
+	<div id="main">
+		<article>
+			<div class="right-main">
+				<div class="right-top">
+					<div class="bcdLogoBody">
+						<img src="../index/images/logoImgBcd.png" style="margin-top: 17px;">
+					</div>
+					<div class="lanChange"></div>
+				</div>
+	            <div class="right-bg">
+	            </div>
+	            <div class="right-bottom">
+	            </div>
+	        </div>
+		</article>
+		<footer><div class="copyright">CopyRight@etravel</div></footer>
+	</div>
+</body>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<!--[if IE 9]>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../js/jquery-migrate-1.2.1.js"></script>
+<script type="text/javascript" src="../js/jquery.mloading.js"></script>
+<script type="text/javascript" src="../js/bgstretcher.js"></script>
+<script type="text/javascript" src="../js/jquery.session.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+
+<!-- 新增js -->
+<script type="text/javascript" src="../js/tools.js"></script>
+<script type="text/javascript" src="../login/js/loginPageTest.js"></script>
+<script type="text/javascript" src="../js/link.js"></script>
+<script type="text/javascript">
+	includeLinkStyle("../login/css/loginPage_BCD.css?v=1.00");
+	function includeLinkStyle(url) {
+	 var link = document.createElement("link");
+	 link.rel = "stylesheet";
+	 link.type = "text/css";
+	 link.href = url;
+	 document.getElementsByTagName("head")[0].appendChild(link);
+	}
+	console.log($(window).height());
+	$('body').bgStretcher({
+	    images: ['../login/images/BCDbg1.jpg'], 
+	    slideShowSpeed: 2000,
+	    transitionEffect: 'fade',
+	    anchoring: 'left center',
+	    anchoringImg: 'left center'
+	});
+	setTimeout(function(){
+		$(".copyright").remove();
+		$(".right-main").css("height","850px");
+		$(".right-title").remove();
+	},20)
+	
+	//语言设置
+	// 缓存语言类型，1.9
+	var langHistory=$.session.get('obtLanguage')
+	$.session.clear()
+	if(langHistory=="CN" || langHistory=='EN'){
+		$.session.set('obtLanguage',langHistory)
+	}else{
+		$.session.set('obtLanguage','')
+	}
+	if(!$.session.get('obtLanguage')){
+		var lang = navigator.language||navigator.userLanguage;//常规浏览器语言和IE浏览器
+		lang = lang.substr(0, 2);//截取lang前2位字符
+		if(lang == 'zh'){
+			$.session.set('obtLanguage', 'CN')
+		    $(".lanChange").text('English');
+		    $(".lanChange").text('English');
+		    $(".right-bottom").html('\
+		    	公告信息<br>\
+		    	关于交通运输部令2016年第56号《航班正常管理规定》第十七条"承运人应当制定并公布运输总条件"请登录 <a href="http://xxgk.mot.gov.cn/jigou/fgs/201607/t20160721_2973469.html" target="_blank">交通部网站</a> 查阅,或登陆国内各大航空公司官网。<br><br><br>\
+		    	<a style="color:#fff" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010402003828" target="_blank">沪公网安备 31010402003828号    沪ICP备17045138号</a>\
+		    	')
+		}else{
+			$.session.set('obtLanguage', 'EN')
+		    $(".lanChange").text('中文');
+		    $(".lanChange").text('中文');
+		    $(".right-bottom").html('\
+		    	Notice<br>\
+		    	Please log into the official website of the Ministry of Transport for the People’s Republic of China for more information on the Regulations on the Normal Management of Flights, Order No.56 of the Ministry of Transport of 2016. The order states that "the carrier shall formulate and promulgate the general conditions of transport". Visit <a href="http://xxgk.mot.gov.cn/jigou/fgs/201607/t20160721_2973469.html" target="_blank">here</a> or the official website of major domestic airlines for full details.<br><br><br>\
+		    	<a style="color:#fff" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010402003828" target="_blank">沪公网安备 31010402003828号    沪ICP备17045138号</a>\
+		    	')
+		}
+	}else if($.session.get('obtLanguage') == "CN"){
+	    $(".lanChange").text('English');
+	    $(".right-bottom").html('\
+	    	公告信息<br>\
+	    	关于交通运输部令2016年第56号《航班正常管理规定》第十七条"承运人应当制定并公布运输总条件"请登录 <a href="http://xxgk.mot.gov.cn/jigou/fgs/201607/t20160721_2973469.html" target="_blank">交通部网站</a> 查阅,或登陆国内各大航空公司官网。<br><br><br>\
+	    	<a style="color:#fff" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010402003828" target="_blank">沪公网安备 31010402003828号    沪ICP备17045138号</a>\
+	    	')
+	}else if($.session.get('obtLanguage') == "EN"){
+	    $(".lanChange").text('中文');
+	    $(".right-bottom").html('\
+	    	Notice<br>\
+	    	Please log into the official website of the Ministry of Transport for the People’s Republic of China for more information on the Regulations on the Normal Management of Flights, Order No.56 of the Ministry of Transport of 2016. The order states that "the carrier shall formulate and promulgate the general conditions of transport". Visit <a href="http://xxgk.mot.gov.cn/jigou/fgs/201607/t20160721_2973469.html" target="_blank">here</a> or the official website of major domestic airlines for full details.<br><br><br>\
+	    	<a style="color:#fff" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010402003828" target="_blank">沪公网安备 31010402003828号    沪ICP备17045138号</a>\
+	    	')
+	}
+	//语言转换
+	$(".lanChange").unbind('click').click(function(){
+	    switch($.session.get('obtLanguage'))
+	    {
+	    case 'CN':
+	      $.session.set('obtLanguage', 'EN');
+	      location.reload();
+	      break;
+	    case 'EN':
+	      $.session.set('obtLanguage', 'CN');
+	      location.reload();
+	      break;
+	    }
+	})
+	$(function(){
+		if(window.location.href.indexOf("nike") == -1){
+			var state = Math.random().toString(36).substr(2);
+			$(".sigleSignIcon").unbind("click").click(function(){
+				window.location.href = 'https://nike-qa.oktapreview.com/oauth2/ausa0mcornpZLi0C40h7/v1/authorize?response_type=code&client_id=nike.wdc.obt&scope=openid%20profile%20email%20address%20phone&state='+state+'&redirect_uri=https://online.bcdtravel.cn';
+			})
+		}else{
+			$(".sigleSignIcon").remove();
+		}
+	})
+</script>
+</html>

@@ -1,0 +1,345 @@
+/*进度条*/
+.progressBar{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 14px;
+	color: #222;
+}
+.progressLine{
+	width: 304px;
+	height: 2px;
+	background-color: #222;
+	margin:24px 0 0 30px;
+}
+.progressCircle{
+	width: 6px;
+    height: 6px;
+    background-color: #222;
+    margin: 22px 10px 0 0;
+    border-radius: 50%;
+}
+.finishedBody{
+	width: 100%;
+	height: 230px;
+	margin: 10px 0 10px 0;
+	border: 1px solid #C2C2C2;
+}
+.finishedTittle,.approveTittle{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	box-sizing: border-box;
+	/*font-family: PingFangSC-Medium;*/
+	font-size: 15px;
+	color: #fff;
+	padding-left: 20px;
+	background-color: #222;
+	font-weight: bold;
+}
+.finishedText{
+	width: 100%;
+	height: 54px;
+	line-height: 54px;
+	text-align: center;
+	margin-top: 50px;
+	font-size: 30px;
+}
+.completeIcon{
+	display: block;
+	margin-left: 41%;
+	margin-right: 5px;
+}
+.orderDetail{
+	width: 100px;
+	height: 20px;
+	line-height: 20px;
+	border: 1px solid #C2C2C2;
+	margin:0 auto;
+	border-radius: 5px;
+	text-align: center;
+	font-size: 14px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+.onlinePayBtn{
+	width: 100px;
+	height: 20px;
+	line-height: 20px;
+	border: 1px solid #C2C2C2;
+	border-radius: 5px;
+	text-align: center;
+	font-size: 14px;
+	margin: 20px 0 0 20px;
+	cursor: pointer;
+}
+/*审核信息*/
+.approveBody{
+	width:100%;
+	min-height: 400px;
+	margin-top: 30px;
+	border: 1px solid #C2C2C2;
+}
+.approveContent{
+	width: 100%;
+	min-height: 320px;
+	box-sizing: border-box;
+	padding: 10px 50px 10px 355px;
+}
+/*提交审核*/
+.selectTittle{
+	width: 200px;
+	height: 20px;
+	line-height: 20px;
+	font-weight: bold;
+	font-size: 14px;
+}
+.selectBody{
+	width: 100%;
+	min-height: 50px;
+	margin-bottom: 10px;
+}
+.ApproverSelect{
+	width: 180px;
+	height: 25px;
+	border:1px solid #a9a9a9;
+	border-radius: 3px;
+	margin-top: 2px;
+}
+.ApproverSelectBody{
+	width: 100%;
+	min-height: 30px;
+	max-height: 60px;
+}
+.ApproverSelectLi{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	box-sizing: border-box;
+	padding-left: 23px;
+}
+.popLiTittle{
+	width: 110px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+}
+.approvalPrice{
+	height: 30px;
+	line-height: 30px;
+	font-size: 22px;
+	color:#041E5B;
+}
+.commentsBody{
+	width: 407px;
+	height: 83px;
+	border-radius: 2px;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+.sureApprovalBtn{
+	width: 120px;
+	height: 30px;
+	line-height: 30px;
+	color: #fff;
+	background-color: #f6aa25;
+	margin:0 auto;
+	border-radius:10px ;
+	text-align: center;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+/*继续预订*/
+.continueBookBody{
+	height: 230px;
+	width: 100%;
+	margin-top: 50px;
+}
+.bookRemind{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 14px;
+}
+.continueUl{
+	width: 600px;
+	height: 180px;
+	margin: 0 auto;
+}
+.continueLi,.continueBody{
+	width: 200px;
+	height: 180px;
+	box-sizing: border-box;
+	padding: 20px 50px;
+}
+.continueLiImg{
+	width: 70px;
+    height: 70px;
+    background-size: 100% 100%;
+    margin: 15px;
+    cursor: pointer;
+}
+.airImg{
+	background-image: url('../images/air.png');
+}
+.hotelImg{
+	background-image: url('../images/hotel.png');
+}
+.trainImg{
+	background-image: url('../images/rail.png');
+}
+.continueImg{
+	background-image: url('../images/continueImg.png');
+}
+.continueLiText{
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	text-align: center;
+}
+/*备注信息*/
+.remarkPop,.refundTicketPop,.alterPop,.approvalPop{
+	width: 592px;
+	min-height: 413px;
+	background-color: #fff;
+	z-index: 101;
+	position: fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    display: none;
+    border-radius: 8px;
+}
+.businessTripTittle,.remarkInfoTittle{
+	width: 100%;
+	height: 25px;
+	box-sizing: border-box;
+	padding-left: 20px;
+	line-height: 25px;
+	font-size: 13px;
+	color: #FFFFFF;
+	background-color: #222;
+}
+.businessTripBody{
+	width: 100%;
+	min-height: 40px;
+}
+.businessTripLi{
+	width: 100%;
+	height: 40px;
+}
+.tripLiTittle{
+	width: 160px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	box-sizing: border-box;
+	padding-left: 20px;
+}
+.companyRemindTittle{
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	/*font-family: PingFangSC-Semibold;*/
+	font-size: 14px;
+	color: #3083FB;
+}
+.companyRemindText{
+	/*font-family: PingFangSC-Regular;*/
+	font-size: 13px;
+	color: #4A4A4A;
+	line-height: 18px;
+	width: 200px;
+	margin-left: 196px;
+	margin-bottom: 10px;
+}
+.employeeName{
+	width: 375px;
+	height: 28px;
+	box-sizing: border-box;
+	padding-left: 105px;
+	margin-top: 6px;
+	line-height: 28px;
+	font-size: 14px;
+	/*border: 1px solid #979797;*/
+}
+.chooseCompany{
+	width: 375px;
+	height: 28px;
+	box-sizing: border-box;
+	padding-left: 100px;
+	outline:none;
+	margin-top: 6px;
+	border: 1px solid #979797;
+	font-size: 14px;
+}
+.remarkInfoBody{
+	width: 100%;
+	height: 252px;
+	/*padding-bottom: 10px;
+	border-bottom: 1px solid #f3f3f3;*/
+}
+.remarkLi{
+	width: 100%;
+	height: 28px;
+	line-height: 28px;
+	color: #4A4A4A;
+	border-bottom: 1px solid #979797;
+	/*font-family: PingFangSC-Regular;*/
+}
+.liTittle{
+	width: 240px;
+	height: 28px;
+	border-right: 1px solid #979797;
+	box-sizing: border-box;
+	padding-left: 20px;
+}
+.colorRed{
+	color: #3083fb;
+}
+.liContent{
+	width: 295px;
+	height: 28px;
+	box-sizing: border-box;
+	padding-left: 20px;
+	position: relative;
+}
+.remarkSelect{
+	width: 275px;
+	height: 25px;
+	border: 0;
+	outline:none;
+	position: absolute;
+}
+.remarkLiInput{
+	width: 260px;
+	height: 26px;
+	border: 0;
+	position: absolute;
+	left: 20px;
+	top: 1px;
+	z-index: 200;
+	outline:none;
+}
+.remarkFooter{
+	width: 100%;
+	height: 70px;
+	border-top: 1px solid #979797;
+}
+.sureRemarkBtn,.closeRemarkBtn{
+	width:120px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	background: #3083FB;
+	border-radius: 4px;
+	color: #fff;
+	position: relative;
+	top: 20px;
+	cursor: pointer;
+}
+.closeRemarkBtn{
+	background-color: #9b9b9b;
+}

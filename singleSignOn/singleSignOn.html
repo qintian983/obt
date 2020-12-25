@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<title></title>
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/jquery.mloading.css">
+</head>
+<body>
+</body>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/tools.js"></script>
+<script type="text/javascript" src="../js/jquery.session.js"></script>
+<script type="text/javascript" src="../js/jquery.mloading.js"></script>
+<script type="text/javascript">
+	var departureCity = tools.queryString().departureCity;
+	var arrivalCity = tools.queryString().arrivalCity;
+	var departureDate = tools.queryString().departureDate;
+	var returnDate = tools.queryString().returnDate;
+	var searchType = tools.queryString().searchType;
+	var type = tools.queryString().type;
+	var Language = tools.queryString().Language;
+	console.log(tools.ajaxUrl);
+	$(function(){
+		//语言设置
+		var lang = navigator.language||navigator.userLanguage;//常规浏览器语言和IE浏览器
+		lang = lang.substr(0, 2);//截取lang前2位字符
+		console.log(lang)
+		if(lang == 'zh'){
+			$.session.set('obtLanguage', 'CN')
+		}else{
+			$.session.set('obtLanguage', 'EN')
+		}
+		if(tools.queryString().CompanyID=="OSRAM"){
+			$.session.set('obtLanguage', Language);
+		}
+		//单点登录
+		var serverAdress =tools.queryString().CompanyMs
+		if(typeof serverAdress =="undefined"){
+			serverAdress='BCD'
+		}
+		
+		if(tools.queryString().UserName&&tools.queryString().EncryptionCode&&tools.queryString().CompanyID){
+			$.session.set('ajaxUrl', tools.ajaxUrl);
+			$.ajax(
+			  {
+			    type:'post',
+			    url : tools.ajaxUrl,
+			    dataType : 'json',
+			    data:{
+			        url: "http://appservicetest.etravel.net.cn/SystemService.svc/SelectUrlPost",
+					jsonStr:'{"CompanyMs":"'+serverAdress+'"}'
+			    },
+			    success : function(data) {
+			        var res = JSON.parse(data);
+			        console.log(res);
+			        if(res.Company_Url){
+			        	$.session.set('obtCompany', res.Company_Url);
+			        	directLogin();
+			        }
+			    },
+			    error : function() {
+			      // alert('fail');
+			    }
+			  }
+			);
+		}
+	})
+
+	function directLogin(){
+		var CompanyID = tools.queryString().CompanyID;
+		var UserName = tools.queryString().UserName;
+		var EncryptionCode = decodeURIComponent(tools.queryString().EncryptionCode);
+		//定义日期格式
+		Date.prototype.Format = function (fmt) { 
+		 	 month = this.getMonth() + 1<10?'0'+(this.getMonth() + 1):this.getMonth() + 1;
+		 	 day = this.getDate()<10?'0'+this.getDate():this.getDate();
+		 	 hour = this.getHours()<10?'0'+this.getHours():this.getHours();
+		 	 minute = this.getMinutes()<10?'0'+this.getMinutes():this.getMinutes();
+		 	 seconds = this.getSeconds()<10?'0'+this.getSeconds():this.getSeconds();
+		     var o = {
+		         "M+": month, // 月份
+		         "d+": day, // 日
+		         "h+": hour, // 小时
+		         "m+": minute, // 分
+		         "s+": seconds, // 秒
+		         "q+": Math.floor((this.getMonth() + 3) / 3), // 季度
+		         "S": this.getMilliseconds() // 毫秒
+		     };
+		     if (/(y+)/.test(fmt))
+		         fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+		     for (var k in o)
+		         if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+		             return fmt;
+		 }
+		var timeString=new Date().Format("yyyyMdhms");
+		var SendTime = UserName+timeString
+		console.log(SendTime);
+		$.ajax(
+		  { 
+		    type:'post',
+		    url : tools.ajaxUrl,
+		    dataType : 'json',
+		    data:{
+		    	url: $.session.get('obtCompany')+"/SystemService.svc/LoginHandler",
+		    	jsonStr:'{"CompanyID":"'+CompanyID+'","Language":"'+$.session.get('obtLanguage')+'","UserName":"'+UserName+'","EncryptionCode":"'+EncryptionCode+'","SendTime":"'+timeString+'","TurnUrl":"","edition":"SPC1.0.1"}'
+		    },
+		    success : function(data) {
+		      console.log(data);
+		      if(data == '""'){
+		      	alert("null");
+		      }else if(data == '"加密字段已过期，验证失败"'){
+		      	alert(data);
+		      }
+		      else{
+		      	$.session.set('netLoginId', data);
+		      	loginProfile(data);
+		      }
+		    },
+		    error : function() {
+		      // alert('fail');
+		    }
+		  }
+		);
+	}
+	function loginProfile(data){
+		$.ajax(
+		  {
+		    type:'post',
+		    url : $.session.get('ajaxUrl'),
+		    dataType : 'json',
+		    data:{
+		        url: $.session.get('obtCompany')+"/SystemService.svc/ProfilePost",
+		        jsonStr:'{"key":'+data+'}'
+		    },
+		    success : function(data) {
+		        var res = JSON.parse(data);
+		        console.log(res);
+		        tools.addProfileInfo(data);
+				$.session.set('noChangePasserword', '1');
+		        window.location.href = '../../index/index.html';
+		    },
+		    error : function() {
+		      // alert('fail');
+		    }
+		  }
+		);
+	}
+</script>
+</html>

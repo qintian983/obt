@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<title></title>
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/bgstretcher.css">
+	<link rel="stylesheet" type="text/css" href="../css/jquery.mloading.css">
+	<style type="text/css">
+		.pageHeader{
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.bgstretcher-page{
+			position: absolute;
+			top: 0;
+		}
+		#cover{
+			display: block;
+		}
+		.pop{
+			width: 570px;
+			/* height: 210px; */
+			min-height: 125px;
+			margin: 0 auto;
+			position: relative;
+			top: 206px;
+			z-index: 200;
+			background: #fff;
+		}
+		.popTittle{
+			width: 100%;
+			height: 40px;
+			box-sizing: border-box;
+			border-bottom: 1px solid #979797;
+			font-size: 16px;
+			text-align: center;
+			line-height: 40px;
+		}
+		.popBody1,.popBody2{
+			width: 100px;
+			height: 85px;
+			position: relative;
+		}
+		.around{
+			width: 34px;
+			height: 34px;
+			border-radius: 50%;
+			color: #fff;
+			text-align: center;
+			line-height: 34px;
+			font-size: 22px;
+			position: absolute;
+			left: 85px;
+			top: 27px;
+		}
+		.resultText{
+			width: 300px;
+			height: 28px;
+			font-size: 20px;
+			line-height: 28px;
+			left: 128px;
+			top: 17px;
+			position: absolute;
+		}
+		.applicationText{
+			width: 440px;
+			height: 22px;
+			font-size: 16px;
+			line-height: 22px;
+			left: 128px;
+			top: 47px;
+			position: absolute;
+		}
+		.popFooter{
+			border-top: 1px dashed #979797;
+			width: 100%;
+			height: 85px;
+			box-sizing: border-box;
+			padding-left: 129px;
+			line-height: 25px;
+			font-size: 14px;
+		}
+		
+		/* 审核理由 */
+		.popReason{
+			position: fixed;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background-color: rgba(0,0,0,0.4);
+			/* background-color: rgba(0,0,0,1); */
+		}
+		.groupReason{
+			width: 570px;
+			background-color: #FFFFFF;
+			padding: 0 40px;
+			border-radius: 8px;
+			position: relative;
+			top: 50%;
+			left: 50%;
+			/* margin: -285px 0 0 -170px; */
+			margin: -160px 0 0 -285px;
+			box-sizing: border-box;
+		}
+		.reasonTitle{
+			color: rgb(9, 75, 144);
+			font-size: 18px;
+			text-align: center;
+			border-bottom: 2px dashed #979797;
+			padding: 10px 0;
+			margin-bottom: 5px;
+		}
+		.reasontips{
+			padding: 10px 0;
+			font-size: 14px;
+			font-weight: 800;
+			color: rgb(51,51,51);
+		}
+		.reasonTxt{
+			/* height: 100px; */
+			width: 100%;
+			height:86px;
+			border-radius: 4px;
+			resize:none;
+			outline: none;
+			text-align: left;
+			padding: 5px;
+			box-sizing: border-box;
+			background:rgba(248,248,248,1);
+			border:1px solid rgba(204,204,204,1);
+		}
+		.l{float: left;}
+		.w50{
+			width: 50%;
+		}
+		.tac{
+			text-align: center;
+		}
+		.clearfix::after{
+			content: "." ;
+			display: block ;
+			height: 0 ;
+			clear: both ;
+			visibility: hidden ;
+		}
+		.btnGroup{
+			padding-top: 40px;
+			padding-bottom: 30px;
+		}
+		.btn{
+			height: 25px;
+			line-height: 25px;
+			width: 100px;
+			text-align: center;
+			color: #FFFFFF;
+			margin: auto;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		.cencleBtn{
+			background-color: #999999;
+		}
+		.submitBtn{
+			background-color: #f6aa25;
+		}
+	</style>
+</head>
+<body>
+	<div id="cover"></div>
+	<div class="main">
+		<article>
+			<div class="pageHeader">
+				<div class="autoCenter">
+					<div class="logoImg" style="background-image: url(../companyLogoImg/X4ZW.png);"></div>
+				</div>
+				<div class="menu" style="background: #041E5B"></div>
+		    </div>
+		</article>
+	</div>
+	<div class="pop">
+		<div class="popTittle">审批结果</div>
+		<div style="min-height: 85px;">
+			<div class="popBody1 hide">
+				<div class="around" style="background: #84BF43;">√</div>
+				<div class="resultText" style="color: #84BF43;">结果 Result:同意 Approved</div>
+				<div class="applicationText">申请单号 Application  No: <span class="applicationNo" style="color:red;"></span></div>
+			</div>
+			<div class="popBody2 hide">
+				<div class="around" style="background: red;">√</div>
+				<div class="resultText" style="color: red;">结果 Result:拒绝 Reject</div>
+				<div class="applicationText">申请单号 Application  No: <span class="applicationNo" style="color:red;"></span></div>
+			</div>
+		</div>
+		<div class="popFooter">
+			想了解订单详情，请点击以下链接<br/>
+			Know more about the order,please click the hyperlink below:<br/>
+			<a style="color: #00A4C5;" href="https://online.bcdtravel.cn">online.bcdtravel.cn</a><br/>
+		</div>
+	</div>
+	
+	<div class="popReason hide">
+		<div class="groupReason">
+			<div class="reasonTitle">拒绝理由(Reasons for reject)</div>
+			<p class="reasontips">拒绝理由(Reasons for reject):</p>
+			<textarea class="reasonTxt" onkeydown="check(event,this)" placeholder="请填写拒绝理由(Please fill in the reason for rejection)" maxlength="80"></textarea>
+			<div class="btnGroup clearfix">
+				<div class="l w50 tac">
+					<div class="btn cencleBtn">Cancel</div>
+				</div>
+				<div class="l w50 tac">
+					<div class="btn submitBtn">Submit</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery-migrate-1.2.1.js"></script>
+<script type="text/javascript" src="../js/jquery.session.js"></script>
+<script type="text/javascript" src="../js/tools.js"></script>
+<script type="text/javascript" src="../js/jquery.mloading.js"></script>
+<script type="text/javascript" src="../js/bgstretcher.js"></script>
+<script type="text/javascript">
+	// $('.pop').hide()
+	// $('#cover').hide()
+	
+	// 上面的删掉
+	$('body').bgStretcher({
+	    images: ['../emailApplication/images/BCDbg2.jpg'],
+	    slideShowSpeed: 2000,
+	    transitionEffect: 'fade',
+	    anchoring: 'left center',
+	    anchoringImg: 'left center'
+	});
+	var Url = tools.queryString().url;
+	var applicationNo = tools.queryString().applicationNo;
+	var id = tools.queryString().id;
+	var companyID = tools.queryString().companyID;
+	var floatAmount = tools.queryString().floatAmount;
+	var CreateDate = tools.queryString().CreateDate;
+	var Language = tools.queryString().Language;
+	var isAgree = tools.queryString().isAgree;
+	var BCDurl = tools.queryString().url;
+	
+	
+	if(Language.toLowerCase().indexOf('cn')<0){
+		// $('.cencleBtn').text("Cancel")
+		// $('.submitBtn').text("Submit")
+		// $('.reasonTxt').attr("placeholder","Please fill in the reason for rejection")
+		// $('.reasonTitle').text("拒绝理由(Reasons for refusal)")
+		// $('.reasontips').text("Reasons for refusal:")
+	}
+	
+	var fixedUrl="http://online.bcdtravel.cn"
+	if(BCDurl.indexOf(fixedUrl)<0){
+		$('.pageHeader').addClass('hide')
+		$('.popFooter').addClass('hide')
+	}
+	console.log(BCDurl.indexOf(fixedUrl));
+	
+	$(function(){
+		$(".applicationNo").text(applicationNo);
+		$('body').mLoading("show");
+		if(isAgree == "true"){
+			$.ajax(
+			  {
+			    type:'post',
+			    url : 'https://online.bcdtravel.cn/SystemAPI_PostSend/api/SystemAPI/PostSend', 
+			    dataType : 'json',
+			    data:{
+			        url: Url+"/OrderService.svc/ApproveAgreeForBCDPost",
+			        jsonStr:'{"applicationNo":"'+applicationNo+'","id":"'+id+'","companyID":"'+companyID+'","floatAmount":"'+floatAmount+'","CreateDate":"'+CreateDate+'","Language":"'+Language+'"}'
+			    },
+			    success : function(data) {
+			    	$('body').mLoading("hide");
+			        var res = JSON.parse(data);
+			        alert(res);
+			        if(res=="SUCCESS"){
+			        	$(".popBody1").removeClass("hide");
+			        }else{
+			        	$(".pop").hide();
+						$('#cover').hide()
+			        }
+			    },
+			    error : function() {
+			      // alert('fail');
+			    }
+			  }
+			);
+		}else if(isAgree == "false"){
+			console.log("拒绝")
+			$('body').mLoading("hide");
+			$(".pop").hide();
+			$('#cover').hide()
+			$('.popReason').show()
+			$('.cencleBtn').unbind().click(function(){
+				$('.popReason').hide()
+			})
+			$('.submitBtn').unbind().click(function(){
+				$('.submitBtn').show()
+				var refuseTxt=$('.reasonTxt').val()
+				if(refuseTxt.length<1){
+					if(Language.toLowerCase().indexOf('cn')<0){
+						alert('Please fill your comments for rejecting the approval..')
+					}else{
+						alert('请填写拒绝理由')
+					}
+					return false
+				}
+				// 2.6,回车换成空格
+				refuseTxt=refuseTxt.replace(/\n/g," ") 
+				console.log(refuseTxt)
+				// 如果有审核理由
+				// ApproveDenyWithReason换新接口
+				// url: Url+"/OrderService.svc/ApproveDenyWithReason",
+				// jsonStr:'{"applicationNo":"'+applicationNo+'","id":"'+id+'","Language":"'+Language+'","context":"'+refuseTxt+'"}'
+				$.ajax(
+				  {
+				    type:'post',
+				    url : 'https://online.bcdtravel.cn/SystemAPI_PostSend/api/SystemAPI/PostSend', 
+				    dataType : 'json',
+				    data:{
+				        url: Url+"/OrderService.svc/ApproveDenyForBCDNewPost",
+				        jsonStr:'{"applicationNo":"'+applicationNo+'","id":"'+id+'","Language":"'+Language+'","context":"'+refuseTxt+'"}'
+				    },
+				    success : function(data) {
+				    	$('body').mLoading("hide");
+				        var res = JSON.parse(data);
+				        alert(res);
+				        if(res=="SUCCESS"){
+							$('#cover').show()
+							$(".pop").show();
+				        	$(".popBody2").removeClass("hide");
+							$('.popReason').hide()
+				        }else{
+				   //      	$(".pop").hide();
+							// $('#cover').hide()
+				        }
+				    },
+				    error : function() {
+				      // alert('fail');
+				    }
+				  }
+				);
+			})
+			// $.ajax(
+			//   {
+			//     type:'post',
+			//     url : 'https://online.bcdtravel.cn/SystemAPI_PostSend/api/SystemAPI/PostSend', 
+			//     dataType : 'json',
+			//     data:{
+			//         url: Url+"/OrderService.svc/ApproveDenyForBCDPost",
+			//         jsonStr:'{"applicationNo":"'+applicationNo+'","id":"'+id+'","Language":"'+Language+'"}'
+			//     },
+			//     success : function(data) {
+			//     	$('body').mLoading("hide");
+			//         var res = JSON.parse(data);
+			//         alert(res);
+			//         if(res=="SUCCESS"){
+			//         	$(".popBody2").removeClass("hide");
+			//         }else{
+			//         	$(".pop").hide();
+			// 			$('#cover').hide()
+			//         }
+			//     },
+			//     error : function() {
+			//       // alert('fail');
+			//     }
+			//   }
+			// );
+		}
+		
+		
+	})
+	
+	// 按键监听事件
+	function check(e,dom) {
+			//获取键盘输入的keyCode 
+			  console.log(e)
+			var keycode = (Number)(e.keyCode);
+			// 中文输入法下keyCode为229
+			// var CnList=['Enter','ArrowDown','ArrowLeft','ArrowRight','Delete','Insert','Space','Backspace','KeyA','KeyB','KeyC','KeyD','KeyE','KeyF','KeyG','KeyH','KeyI','KeyJ','KeyK','KeyL','KeyM','KeyN','KeyO','KeyP','KeyQ','KeyR','KeyS','KeyT','KeyU','KeyV','KeyW','KeyX','KeyY','KeyZ']
+			var CnList =['Enter']
+			if (e.keyCode == 229) {
+				if(CnList.indexOf(e.code)>-1){
+					e.returnValue = false;
+				}else{
+					// var str=$(dom).val()
+					// $(dom).val(str.substring(0,str.length-1))
+					// setTimeout(function() {
+					// 	$(dom).val(str.replace(/[^\u4e00-\u9fa5a-zA-Z]/g,''))
+					// }, 10);
+				}
+			}else if (keycode == 13) {
+				//键盘上方数字键        
+				//小数字键盘         
+				e.returnValue = false;
+			}else{
+				e.returnValue = true;
+			}
+		}
+</script>
+</html>

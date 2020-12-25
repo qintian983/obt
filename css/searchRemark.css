@@ -1,0 +1,41 @@
+.searchRemarkBody{
+    font-size: 12px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 300px;
+    min-height: 200px;
+    z-index: 300;
+    border: 1px solid #9b9b9b;
+    background: #fff;
+    /*box-sizing: border-box;
+    overflow-y: scroll;*/
+    /*white-space: nowrap;*/
+    /*overflow-x: hidden;*/
+}
+.searchRemarkBody .result{
+    list-style: none;
+}
+.searchRemarkBody .result li{
+    padding:5px;
+    background-color: #fff;
+    margin:2px 0;
+    cursor: pointer;
+    overflow: hidden;
+}
+.searchRemarkBody .result li.active, .searchRemarkBody .result li.active .letter{
+    background-color: #297bcd;
+    color:#fff;
+}
+.searchRemarkBody .result li .letter{
+    float:right;
+    color:#999;
+}
+.searchRemarkBody .result li .noresult{
+    padding:0 8px;
+    color:#3083fb;
+}
+.searchRemarkBody .result li:hover, .searchRemarkBody .result li:hover > .letter{
+    background-color: #1e66ae;
+    /*color:#fff!important;*/
+}

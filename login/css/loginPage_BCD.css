@@ -1,0 +1,255 @@
+/*修改密码弹窗*/
+.loginPop{
+    width: 590px;
+    min-height: 200px;
+    border-radius: 10px;
+    background-color: #fff;
+    z-index: 101;
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    display: none;
+}
+.loginPopTittle{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+    background-color: #041e5b;
+    border-radius: 10px 10px 0 0;
+}
+.closePop{
+    position: absolute;
+    right: 20px;
+    top: 0;
+    cursor:pointer;
+    font-size: 20px;
+}
+.closePop:hover{
+    color:#EF853A;
+}
+.popBody{
+    box-sizing: border-box;
+    padding:0 100px 0 100px;
+}
+.popBodyLi{
+    width: 100%;
+    margin-top: 20px;
+    height: 30px;
+    line-height: 30px;
+}
+.popBodyLiTittle{
+    width: 130px;
+    height: 30px;
+}
+.liInput{
+    width: 250px;
+    height: 28px;
+    border: 1px solid #979797;
+    border-radius: 5px;
+}
+.updatePasswordBtn,.completeInfoBtn{
+    width: 120px;
+    height: 25px;
+    border-radius: 5px;
+    margin: 0 auto;
+    background-color: #EF853A;
+    color: #fff;
+    margin-top: 20px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+/*body*/
+#main{
+    margin-top: 0;
+}
+/*登陆样式*/
+.right-main {
+    width: 525px;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    top: 0;
+    background: rgba(4,30,91,.86);
+}
+.right-top{
+    width: 100%;
+    height: 160px;
+    position: relative;
+}
+.bcdLogoBody{
+    width: 50%;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 0 20px 20px 0;
+    position: relative;
+    top: 60px;
+}
+.lanChange{
+    line-height: 20px;
+    height: 20px;
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    right: 61px;
+    top: 145px;
+    cursor:pointer;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.right-bg,.right-bottom{
+    width: 90%;
+    margin: 0 auto;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4c000000,endColorstr=#4c000000);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.right-title {
+    color: #fff;
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.right-bg label {
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    text-align: left;
+    margin: 7px 0 10px 5px;
+}
+
+.right-bg input {
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    border:0;
+    border-bottom: 1px solid #fcfcfc;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    padding: 4px 6px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei",'HKFS',"Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif !important;
+}
+
+.a-forgetpwd {
+    font-size: 14px;
+    color: #fff;
+    float: right;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+.a-forgetpwd:hover {
+    color: #EF853A;
+}
+
+.btnLogin {
+    background: #EF853A !important;
+    color: #fff !important;
+    border-color: #EF853A !important;
+}
+#Button1{
+	margin-top: 30px;
+    border-radius: 5px;
+}
+.forgetPassword{
+    width: 100%;
+    height: 20px;
+    /* font-size: 13px; */
+    font-size: 14px;
+    text-align: right;
+    color: #fff;
+    position: relative;
+}
+.sigleSignIcon{
+    width: 20px;
+    height: 20px;
+    background-size: 100% 100%;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+.forgetPassword:hover{
+    text-decoration: underline;
+}
+.copyright{
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+    position: absolute;
+    width: 100%;
+}
+/* 隐私政策 */
+#Button1{
+	margin-top: 10px;
+}
+.policyLink{
+	margin-top: 30px;
+	text-align: left;
+	color: #fff;
+	font-size: 14px;
+	line-height: 20px;
+}
+.policyLink a{
+	color: #fff;
+}
+.downloadBtn {
+	width:200px;
+	height:36px;
+	background:rgba(77,132,191,1);
+	border-radius:4px;
+	line-height: 36px;
+	justify-content: center;
+}
+.downloadIcon{
+	margin: 0;
+	margin-top: 3px;
+}
+
+.downloadBtn:first-of-type{
+	margin-left: 5%;
+}
+.androidBtn{
+	margin-left: 6%;
+}
+.iosBtn ,.androidBtn {
+	position: relative;
+}
+.QRcode{
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	left: 50px;
+	top: 46px;
+	background-color: #ffff;
+	display: none;
+}
+.QRcode img{
+	width: 80px;
+	height: 80px;
+	margin: auto;
+	margin-top: 10px;
+}
+.QRcode::before{
+	content: '';
+	display: block;
+	height: 8px;
+	width: 8px;
+	background-color: #FFFFFF;
+	position: absolute;
+	transform: rotate(45deg);
+	left: 46px;
+	top: -4px;
+}

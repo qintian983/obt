@@ -1,0 +1,418 @@
+body{
+	background-color: #f1f1f1;
+	font-size: 12px;
+}
+/*进度条*/
+.progressBar{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 14px;
+	color: #9b9b9b;
+}
+.progressLine{
+	width: 304px;
+	height: 2px;
+	/*background-color: #041e58;*/
+	margin:24px 0 0 30px;
+}
+.progressCircle{
+	width: 6px;
+    height: 6px;
+    /*background-color: #041e58;*/
+    margin: 22px 10px 0 0;
+    border-radius: 50%;
+}
+/*.tabBarColor{
+	color: #F58A00;
+}
+.tabBarBackColor{
+	background-color: #F58A00;
+}*/
+/*搜索框*/
+.searchBody{
+	width: 100%;
+	height: 60px;
+	background-color: #fff;
+	position: relative;
+	top: 10px;
+	margin-bottom: 14px;
+}
+.searchState{
+	width: 88px;
+	height: 26px;
+	margin: 17px 0 0 20px;
+	border: 1px solid #7f7f7f;
+}
+.trainDepartureCitySearch,.trainArrivalCitySearch,.trainDepartureDateSearch,.trainReturnDateSearch{
+	width: 170px;
+	height: 24px;
+	margin: 17px 0 0 20px;
+	position: relative;
+	border: 1px solid #7f7f7f;
+}
+.departureAirIcon,.arrivalAirIcon,.departureDateIcon,.returnDateIcon{
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 2px;
+	top: 2px;
+	background-image: url('../../css/images/icon_search.png');
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+.departureAirIcon,.arrivalAirIcon{
+	display: none;
+	/*background-position:0 0;*/
+}
+/*.arrivalAirIcon{
+	background-position:0 -20px;
+}*/
+.departureDateIcon{
+	background-position:0 -40px;
+}
+.returnDateIcon{
+	background-position:0 -60px;
+}
+#trainDepartureCity,#trainArrivalCity,#trainDepartureDate,#trainReturnDate{
+	width: 80px;
+	height: 24px;
+	position: absolute;
+	top: 0;
+	left: 24px;
+	border: 0;
+	outline:none;
+}
+.trainReturnDateSearch{
+	display: none;
+	border: 1px solid #9B9B9B;
+    color: #9b9b9b;
+}
+.trainDepartureWeek,.trainReturnDateWeek{
+	width: 66px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	font-size: 12px;
+	position: absolute;
+    left: 104px;
+    color: #999;
+}
+.searchTrainBtn{
+	width: 80px;
+	height: 26px;
+    position: absolute;
+    top: 17px;
+    right: 20px;
+	/*background-color: #041e58;*/
+	color: #fff;
+	text-align: center;
+	border-radius: 4px;
+	font-size: 15px;
+	line-height: 26px;
+	font-weight: bold;
+	cursor: pointer;
+}
+/*相关筛选*/
+.ticketBody{
+	background-color: #fff;
+	width: 100%;
+}
+.chooseDate{
+	line-height: 50px;
+	height: 50px;
+	/*color:#041e58;*/
+	text-align: right;
+	font-size: 15px;
+}
+.trainChooseBody{
+	line-height: 50px;
+	height: 70px;
+	line-height: 70px;
+	font-size: 15px;
+	border-top: 4px solid #f1f1f1;
+}
+.trainTypeInput{
+	width: 16px;
+	height: 16px;
+	margin: 27px 10px 0 0;
+	cursor: pointer;
+}
+/*筛选部分*/
+.siftBody{
+	width: 100%;
+	height:52px;
+	line-height: 24px;
+	background-color: #e9f0f6;
+	border: #CCC 1px solid;
+	position: relative;
+	font-size: 13px;
+}
+.departureTimeSort{
+	cursor: pointer;
+}
+.departStation,.arrivalStation{
+	width: 105px;
+	height: 24px;
+	margin: 14px 0 0 10px;
+	outline: none;
+	background-color: #e9f0f6;
+	border: 0;
+}
+.departureTimeSortIcon,.trainUseTimeSortIcon{
+	width:11px;
+	height: 13px;
+	margin: 18px 0 0 5px;
+	background-image: url('../../css/images/sortIcon.png');
+	background-position:0px 0px;
+}
+/*火车票列表*/
+.ticketList{
+	margin-top: 5px;
+}
+.ticketLi{
+	width: 100%;
+	min-height: 150px;
+	margin-bottom: 5px;
+	position: relative;
+	background-color: #fff;
+	color: #4D4D4D;
+}
+.ticketTrainInfo{
+	width: 150px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	position: absolute;
+	top: 60px;
+	left: 40px;
+}
+.ticketTrainStartTime{
+	width: 60px;
+    height: 24px;
+    line-height: 24px;
+    position: absolute;
+    top: 35px;
+    left: 225px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Tahoma, Arial, sans-serif;
+}
+.ticketTrainArriveTime{
+	width: 60px;
+    height: 24px;
+    line-height: 24px;
+    position: absolute;
+    top: 95px;
+    left: 225px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Tahoma, Arial, sans-serif;
+}
+.ticketTrainStartStation{
+	width: 100px;
+    height: 24px;
+    line-height: 24px;
+    position: absolute;
+    top: 35px;
+    left: 425px;
+    font-size: 16px;
+}
+.ticketTrainArriveStation{
+	width: 100px;
+    height: 24px;
+    line-height: 24px;
+    position: absolute;
+    top: 95px;
+    left: 425px;
+    font-size: 16px;
+}
+.ticketUseTime{
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	position: absolute;
+	top: 60px;
+	left: 600px;
+}
+.ticketFareList{
+	width: 500px;
+	min-height: 108px;
+	position: relative;
+	margin-left: 700px;
+}
+.ticketFareLi{
+	width: 100%;
+	height: 50px;
+	position:relative;
+}
+.seatInfo{
+	/* width: 310px; */
+	width: 210px;
+    height: 50px;
+    line-height: 50px;
+    /* padding-left: 35px; */
+    box-sizing: border-box;
+    font-size: 16px;
+}
+.ticketPrice{
+	color: #f58a00;
+}
+.ticketViolationIcon{
+	width: 80px;
+	height: 18px;
+	line-height: 18px;
+	background-color: red;
+	font-size: 12px;
+	border-radius: 5px;
+	margin: 0 auto;
+	color: #fff;
+	margin-top: 15px;
+	text-align: center;
+}
+.seatLeft{
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+	box-sizing: border-box;
+	/*padding-left: 15px;*/
+	text-align: center;
+}
+.bookTrainBtn{
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	background-color: #041e58;
+	text-align: center;
+	border-radius: 4px;
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	color: #fff;
+	cursor: pointer;
+}
+.seatLeftNull{
+	background-color: #9b9b9b;
+}
+.standByState{
+	background-color: #fff;
+	color: #041e58;
+	border: 1px solid #041e58;
+}
+/* 新增图片 */
+.picBody{
+	position: relative;
+	
+}
+.picHref{
+	    position: absolute;
+	    height: 100%;
+	    width: 100%;
+	    left: 0;
+	    top: 0;
+		cursor: pointer;
+}
+.soldOut{
+	/* width: 134px; */
+	height: 30px;
+	font-size: 14px;
+	color: #3083FB;
+	line-height: 30px;
+	text-decoration: underline;
+	cursor: pointer;
+	
+	position: absolute;
+	top: 10px;
+	right: 20px;
+}
+.soldOutLeft{
+	right: 125px;
+}
+.soldOutRight{
+	right: 20px;
+}
+/* 反馈信息 */
+.recordTrainFix{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.2);
+}
+.recordTrain{
+    background-color: #ffffff;
+    height: 154px;
+    width: 520px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -77px;
+    margin-left: -260px;
+    padding: 10px;
+	text-align: center;
+}
+.recordTrainClose{
+	text-align: right;
+	padding-right: 10px;
+}
+.recordTrainTips{
+	text-align: center;
+	font-size: 14px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: #636363;
+	line-height: 20px;
+	text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+	padding: 20px 0;
+}
+.recordTrainBtn{
+	width: 120px;
+    height: 30px;
+    background: #041e58;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    line-height: 30px;
+    text-align: center;
+    color: #ffffff;
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	margin-left: -60px;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+/* 关闭按钮 */
+.close{
+	position:relative;
+	width:0.2em;
+	height:1.5em;
+	background: #222;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	display: inline-block;
+	cursor: pointer;
+}
+.close:after{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:0.2em;
+	height:1.5em;
+	background: #222;
+	-webkit-transform: rotate(270deg);
+	-moz-transform: rotate(270deg);
+	-o-transform: rotate(270deg);
+	-ms-transform: rotate(270deg);
+	transform: rotate(270deg);
+}

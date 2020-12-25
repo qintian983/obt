@@ -1,0 +1,540 @@
+.orderInfo{
+	width: 100%;
+	min-height: 145px;
+	margin-bottom: 10px;
+	border: 1px solid #C2C2C2;
+}
+
+.orderInfoLeft{
+	/* width: 950px; */
+	width: 100%;
+	padding: 20px;
+	box-sizing: border-box;
+}
+.lineInfo{
+	display: -webkit-box; /* Chrome 4+, Safari 3.1, iOS Safari 3.2+ */  
+	display: -moz-box; /* Firefox 17- */  
+	display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */  
+	display: -moz-flex; /* Firefox 18+ */  
+	display: -ms-flexbox; /* IE 10 */  
+	display: flex; /* Chrome 29+, Firefox 22+, IE 11+, Opera 12.1/17/18, Android 4.4+ */ 
+}
+.mt20{
+	margin-top: 20px;
+}
+.lineInfoBetween{
+	justify-content: space-between;
+}
+.orderDetailInfo{
+	width: 100%;
+	min-height: 145px;
+	position: relative;
+}
+.orderDetailInfoNo{
+	/* width: 300px; */
+	width: 375px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 14px;
+	color: #4A4A4A;
+	/* position: absolute; */
+	left: 27px;
+	top: 20px;
+}
+.orderDetailInfoDate{
+	/* width: 300px; */
+	width: 375px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 14px;
+	color: #4A4A4A;
+	/* position: absolute; */
+	left: 27px;
+	top: 60px;
+}
+.orderDetailInfoReason{
+	max-width: 750px;
+	min-height: 25px;
+	line-height: 25px;
+	font-size: 14px;
+	color: #4A4A4A;
+	/* position: absolute; */
+	left: 400px;
+	top: 60px;
+	/* display: -webkit-box; */
+	display: -moz-box;  /* Firefox */
+	display: -ms-flexbox;    /* IE10 */
+	display: -webkit-box;    /* Safari */ 
+	display: -webkit-flex;    /* Chrome, WebKit */
+	display: box; 
+	display: flexbox; 
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+.orderDetailInfoState{
+	/* width: 300px; */
+	width: 375px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 14px;
+	color: #4A4A4A;
+	/* position: absolute; */
+	left: 27px;
+	top: 100px;
+}
+.orderDetailInfoDistance{
+	width: 300px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 14px;
+	color: #4A4A4A;
+	/* position: absolute; */
+	left: 400px;
+	top: 100px;
+}
+.orderDetailInfoPrice{
+	width: 300px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #4A4A4A;
+	/* position: absolute; */
+	left: 900px;
+	top: 20px;
+}
+/*乘客信息*/
+.orderCustomerInfo{
+	width: 100%;
+	border: 1px solid #979797;
+	margin-bottom: 36px;
+	/*border-width: 1px 0 1px 0;
+	border-color: #979797;
+	border-style: solid;*/
+}
+.orderInfoTittle,.orderCustomerTittle{
+	width: 100%;
+	height: 40px;
+	box-sizing: border-box;
+	line-height: 40px;
+	/*font-family: PingFangSC-Medium;*/
+	font-size: 15px;
+	color: #4A4A4A;
+	padding-left:27px;
+	background-color: #f3f3f3;
+}
+.passengerBarLi,.passengerLiDiv{
+	text-align:center;
+	height: 30px;
+	line-height: 30px;
+	/*font-family: PingFangSC-Medium;*/
+	font-size: 13px;
+	color: #4A4A4A;
+}
+.passengerList{
+	margin-bottom: 11px;
+}
+/*备注信息*/
+.remarkPop,.refundTicketPop,.alterPop{
+	width: 592px;
+	min-height: 413px;
+	background-color: #fff;
+	z-index: 101;
+	position: fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    display: none;
+    /*font-family: PingFangSC-Regular;*/
+    border-radius: 8px;
+}
+.businessTripTittle,.remarkInfoTittle{
+	width: 100%;
+	height: 25px;
+	box-sizing: border-box;
+	padding-left: 20px;
+	line-height: 25px;
+	font-size: 13px;
+	color: #FFFFFF;
+	background-color: #041e58;
+}
+.businessTripBody{
+	width: 100%;
+	min-height: 40px;
+}
+.businessTripLi{
+	width: 100%;
+	height: 40px;
+}
+.tripLiTittle{
+	width: 160px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	box-sizing: border-box;
+	padding-left: 20px;
+}
+.companyRemindTittle{
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	/*font-family: PingFangSC-Semibold;*/
+	font-size: 14px;
+	color: #041e58;
+}
+.companyRemindText{
+	/*font-family: PingFangSC-Regular;*/
+	font-size: 13px;
+	color: #4A4A4A;
+	line-height: 18px;
+	width: 200px;
+	margin-left: 196px;
+	margin-bottom: 10px;
+}
+.employeeName{
+	width: 375px;
+	height: 28px;
+	box-sizing: border-box;
+	padding-left: 105px;
+	margin-top: 6px;
+	line-height: 28px;
+	font-size: 14px;
+	/*border: 1px solid #979797;*/
+}
+.chooseCompany{
+	width: 375px;
+	height: 28px;
+	box-sizing: border-box;
+	padding-left: 100px;
+	outline:none;
+	margin-top: 6px;
+	border: 1px solid #979797;
+	font-size: 14px;
+}
+.remarkInfoBody{
+	width: 100%;
+	height: 252px;
+}
+.remarkLi{
+	width: 100%;
+	height: 28px;
+	line-height: 28px;
+	color: #4A4A4A;
+	border-bottom: 1px solid #979797;
+	/*font-family: PingFangSC-Regular;*/
+}
+.liTittle{
+	width: 240px;
+	height: 28px;
+	border-right: 1px solid #979797;
+	box-sizing: border-box;
+	padding-left: 20px;
+}
+.colorRed{
+	/*color: red;*/
+}
+.liContent{
+	width: 295px;
+	height: 28px;
+	box-sizing: border-box;
+	padding-left: 20px;
+	position: relative;
+}
+.remarkSelect{
+	width: 275px;
+	height: 25px;
+	border: 0;
+	outline:none;
+}
+.remarkLiInput{
+	width: 260px;
+	height: 26px;
+	border: 0;
+	position: absolute;
+	left: 20px;
+	top: 1px;
+	z-index: 200;
+	outline:none;
+}
+.remarkFooter{
+	width: 100%;
+	height: 70px;
+	border-top: 1px solid #979797;
+}
+.sureRemarkBtn,.closeRemarkBtn{
+	width:120px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	background: #f6aa25;
+	border-radius: 4px;
+	color: #fff;
+	position: relative;
+	top: 20px;
+	cursor: pointer;
+}
+.closeRemarkBtn{
+	background-color: #041e58;
+}
+
+/*订单详情*/
+.orderDetailsTabBar{
+	height: 29px;
+	border-bottom: 1px solid #041e58;
+	cursor: pointer;
+}
+.orderList{
+	border-top:1px solid #041e58;
+	border-left:1px solid #041e58;
+	border-right:1px solid #041e58;
+}
+.labelIcon{
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	color: #fff;
+	font-size: 12px;
+	text-align: center;
+}
+.triangleTopLeft{
+	width: 0;
+    height: 0;
+    border-top: 6px solid #f6aa25;
+    border-left: 60px solid transparent;
+}
+.segmentList,.trainList,.hotelList{
+	margin-bottom: 50px;
+}
+.segmentLiTittle,.trainLiTittle,.hotelLiTittle{
+	width: 100%;
+	height: 44px;
+	border-bottom: 1px solid #979797;
+	line-height: 44px;
+	font-size: 13px;
+}
+.segmentLiBody,.trainLiBody,.hotelLiBody{
+	border-bottom: 1px solid #041e58;
+}
+.segmentDetailsList,.trainDetailsList,.hotelDetailsList{
+	width: 849px;
+	min-height: 123px;
+	border-right: 1px solid #C2C2C2;
+	border-left: 1px solid #979797;
+}
+.segmentDetailsLi,.trainDetailsLi{
+	min-height: 123px;
+	position: relative;
+}
+.DenyReason{
+	width: 100%;
+	height: 70px;
+	box-sizing: border-box;
+	padding-left: 5px;
+	line-height: 35px;
+	font-size: 14px;
+	color: #4a4a4a;
+	border-top:1px solid #c2c2c2;
+}
+.segmentAirLine,.trainType{
+	position: absolute;
+	left: 29px;
+	top: 20px;
+	height: 25px;
+	line-height: 25px;
+	min-width: 90px;
+	font-family: Arial-Black;
+	font-size: 14px;
+	color: #4A4A4A;
+}
+.segmentDepartTime,.trainDepartTime{
+	position: absolute;
+	left: 390px;
+	top: 19px;
+	height: 26px;
+	line-height: 26px;
+	width: 65px;
+	font-family: Arial-Black;
+	font-size: 21px;
+	color: #000;
+	font-weight: bold;
+}
+.segmentArrow,.trainArrow{
+	width: 77px;
+	height: 12px;
+	position: absolute;
+	left: 450px;
+	top: 25px;
+	background-image: url('../../css/images/orderArrow.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.segmentArriveTime,.trainArriveTime{
+	position: absolute;
+	left: 540px;
+	top: 19px;
+	height: 26px;
+	line-height: 26px;
+	width: 65px;
+	font-family: Arial-Black;
+	font-size: 21px;
+	color: #000;
+	font-weight: bold;
+}
+.segmentDepartAirport,.trainDepart{
+	position: absolute;
+	right: 414px;
+	top: 45px;
+	height: 18px;
+	line-height: 18px;
+	min-width: 100px;
+	/*font-family: PingFangSC-Regular;*/
+	font-size: 13px;
+	color: #404040;
+	text-align: right;
+}
+.segmentArriveAirport,.trainArrive{
+	position: absolute;
+	left: 540px;
+	top: 45px;
+	height: 18px;
+	line-height: 18px;
+	min-width: 100px;
+	/*font-family: PingFangSC-Regular;*/
+	font-size: 13px;
+	color: #404040;
+}
+.segmentDurnturn,.trainDurnturn{
+	/*font-family: PingFangSC-Regular;*/
+	font-size: 13px;
+	color: #838183;
+	position: absolute;
+	left: 675px;
+	top: 22px;
+	height: 20px;
+	line-height: 20px;
+	min-width: 100px;
+}
+.segmentFlightNo,.trainCode{
+	position: absolute;
+	left: 29px;
+	top: 45px;
+	height: 17px;
+	line-height: 17px;
+	min-width: 60px;
+	font-family: Arial-Black;
+	font-size: 12px;
+	color: #4A4A4A;
+}
+.segmentCabin,.trainSeat{
+	/*font-family: PingFangSC-Regular;*/
+	font-size: 12px;
+	color: #838183;
+	position: absolute;
+	left: 29px;
+	top: 80px;
+	height: 17px;
+	line-height: 17px;
+	min-width: 100px;
+}
+.segmentCraft{
+	/*font-family: PingFangSC-Regular;*/
+	font-size: 12px;
+	color: #838183;
+	position: absolute;
+	left: 145px;
+	top: 80px;
+	height: 17px;
+	line-height: 17px;
+	min-width: 100px;
+}
+.segmentMeal{
+	/*font-family: PingFangSC-Regular;*/
+	font-size: 12px;
+	color: #838183;
+	position: absolute;
+	left: 240px;
+	top: 80px;
+	height: 17px;
+	line-height: 17px;
+	min-width: 100px;
+}
+.hotelDetailsLi{
+	height: 165px;
+	position: relative;
+}
+.hotelName,.hotelAddress,.hotelRoomName,.hotelBedName,.hotelBreakfast,.hotelRooms,.hotelNights,.hotelWifi{
+	position: absolute;
+    left: 29px;
+    height: 25px;
+    line-height: 25px;
+    min-width: 90px;
+    font-family: Arial-Black;
+    font-size: 14px;
+    color: #4A4A4A;
+}
+.hotelName{
+	top: 10px;
+}
+.hotelAddress{
+	top: 35px;
+}
+.hotelRoomName{
+	top: 60px;
+}
+.hotelBedName{
+	top: 85px;
+}
+.hotelBreakfast{
+	top: 110px;
+}
+.hotelRooms{
+	top: 135px;
+}
+.hotelNights{
+	top: 135px;
+	left: 140px;
+}
+.hotelWifi{
+	top: 135px;
+	left: 280px;
+}
+.FareAmount{
+	width: 200px;
+    height: 30px;
+    margin: 20px 0 0 40px;
+    font-size: 16px;
+}
+.approveCommentsTittle{
+	width: 200px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	text-align: center;
+}
+.approveComments{
+	width: 800px;
+	height: 100px;
+}
+.approveBtnBody{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.approveBtn,.denyBtn{
+	width: 160px;
+	height: 35px;
+	line-height: 35px;
+	font-size: 14px;
+	text-align: center;
+	color: #fff;
+	background-color: #f6aa25;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.approveBtn{
+	margin-left: 400px;
+}
+.denyBtn{
+	margin-left: 100px;
+}

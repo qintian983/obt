@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<title></title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .round1{
+            width: 0.8rem;
+            height: 0.65rem;
+            background: linear-gradient(90deg,rgba(81,155,236,1) 0%,rgba(255,255,255,1) 100%);
+            box-shadow: 0px 2px 4px 0px rgba(94,163,238,0.3);
+            opacity: 0.49;
+            position: absolute;
+            border-radius: 0 0 80% 0;
+            top: 0;
+            left: 0;
+        }
+        .round2{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width:1.2rem;
+            height:1rem;
+            background:linear-gradient(90deg,rgba(128,187,249,1) 0%,rgba(255,255,255,1) 100%);
+            box-shadow:0px 2px 4px 0px rgba(94,163,238,0.3);
+            opacity:0.38;
+            border-radius: 90% 0 0 0;
+        }
+        .icon{
+            width: 0.8rem;
+            height: 0.8rem;
+            margin: 0 auto;
+            background-image: url("images/pic_icon.png");
+            background-size: 100% 100%;
+            margin-top: 0.35rem;
+        }
+        .phone{
+            width: 2.8rem;
+            height: 3.965rem;
+            margin: 0 auto;
+            background-image: url("images/pic_phone.png");
+            background-size: 100% 100%;
+            margin-top: 0.2rem;
+        }
+        .downloadBtn{
+            width: 2.5rem;
+            height: 0.5rem;
+            line-height: 0.25rem;
+            text-align: center;
+            font-size: 0.16rem;
+            background-color: #5990F5;
+            color: #fff;
+            margin: 0 auto;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="round1"></div>
+    <div class="round2"></div>
+    <div class="icon"></div>
+    <div class="phone"></div>
+    <div class="downloadBtn">
+        立即下载<br>Download Now
+    </div>
+</body>
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript">
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          if (clientWidth > 750) clientWidth = 750;
+          docEl.style.fontSize = (clientWidth / 3.75) + 'px';
+        };
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+
+	var mobileAgent = new Array("iphone", "ipod", "ipad", "android", "mobile", "blackberry", "webos", "incognito", "webmate", "bada", "nokia", "lg", "ucweb", "skyfire");
+	var browser = navigator.userAgent.toLowerCase(); 
+	var isMobile = false; 
+	for (var i=0; i<mobileAgent.length; i++){
+	    if (browser.indexOf(mobileAgent[i])!=-1){ 
+	        isMobile = true; 
+	        break;
+	    }
+    }
+    if(isMobile){
+        var browser = navigator.userAgent.toLowerCase();
+        if(browser.indexOf("iphone") != -1||browser.indexOf("ipad") != -1){
+            window.location.href = 'https://itunes.apple.com/cn/app/id1460243232';
+        }
+    }
+    $(".downloadBtn").unbind("click").click(function(){
+        if(isMobile){
+            var browser = navigator.userAgent.toLowerCase();
+            if(browser.indexOf("iphone") != -1||browser.indexOf("ipad") != -1){
+                // alert("ios");
+                window.location.href = 'https://itunes.apple.com/cn/app/id1460243232';
+            }else if(browser.indexOf("android") != -1){
+                // alert("android");
+                window.location.href = 'https://online.bcdtravel.cn/download/android.apk';
+            }
+        }
+    })
+</script>
+</html>

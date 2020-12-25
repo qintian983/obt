@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<title>Travel Portal,企业差旅管理专家</title>
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/jquery.mloading.css">
+</head>
+<body>
+	<div id="cover"></div>
+	<div class="remarkPop"></div>
+	<div id="main">
+		
+	</div>
+</body>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/tools.js"></script>
+<script type="text/javascript" src="../js/jquery.mloading.js"></script>
+<script type="text/javascript" src="../js/jquery.session.js"></script>
+<script type="text/javascript" src="../js/allPageCommon.js"></script>
+<script type="text/javascript" src="../js/config.js?v=1.00"></script>
+<script type="text/javascript" src="../bookFinished/js/bookFinished.js"></script>
+<script type="text/javascript">
+	var onlineStyle = JSON.parse($.session.get('ProfileInfo')).onlineStyle;
+	if(onlineStyle){
+		switch(onlineStyle){
+			case 'BCD':
+			  includeLinkStyle("../bookFinished/css/bookFinished_BCD.css?v=1.00");
+			  break;
+			case 'APPLE':
+			  includeLinkStyle("../bookFinished/css/bookFinished_Apple.css?v=1.00");
+			  break;
+			case 'eTravel':
+			  includeLinkStyle("../bookFinished/css/bookFinished_1.css?v=1.00");
+			  break;
+		}
+	}
+	function includeLinkStyle(url) {
+	 var link = document.createElement("link");
+	 link.rel = "stylesheet";
+	 link.type = "text/css";
+	 link.href = url;
+	 document.getElementsByTagName("head")[0].appendChild(link);
+	}
+</script>
+</html>

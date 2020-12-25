@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>error</title>
+	<style>
+		.imgGroup{
+			height: 100%;
+			width: 100%;
+			margin: 170px auto 0 auto;
+			text-align: center;
+		}
+		.imgGroup .img{
+			width: 710px;
+			height: auto;
+		}
+		.tips{
+			width: 710px;
+			margin: auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="imgGroup">
+		<img class="img" src="images/maintain.png">
+		<p class="tips"></p>
+	</div>
+</body>
+<script src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.session.js"></script>
+
+<script type="text/javascript">
+	// 判断中英文
+	var lan = $.session.get('obtLanguage');     //语言版本CN,EN
+	var tipsStr='The System is under maintenance during 22:00~23:00, please wait patiently.</br> Or please call service team to handle the booking.'
+	// 判断苹果或者安卓,onlineStyle=BCD或者APPLE
+	var timeSlot="22:00-23:00"
+	$.getJSON('../link.json?'+Math.random(), function(d) {
+		// console.log(d.link=='false')
+		timeSlot=d.wait;
+		if($.session.get('ProfileInfo')==undefined || $.session.get('ProfileInfo')==''){
+			console.log($.session.get('ProfileInfo'))
+			if(lan=='CN'){
+				tipsStr='系统在'+timeSlot+'期间正在维护中，请耐心等待。</br>如您需要预订可以联系服务组。'
+			}
+			$('.tips').html(tipsStr)
+		}else{
+			var ProfileInfo = JSON.parse($.session.get('ProfileInfo'));
+			if(ProfileInfo.onlineStyle=="BCD"){
+				tipsStr='The System is under maintenance during '+timeSlot+', please wait patiently.</br> Or please call service team to handle the booking.'
+				if(lan=='CN'){
+					tipsStr='系统在'+timeSlot+'期间正在维护中，请耐心等待。</br>如您需要预订可以联系服务组。'
+				}
+			}
+			if(ProfileInfo.onlineStyle=="APPLE"){
+				tipsStr='The System is under maintenance during '+timeSlot+', please wait patiently.</br> Or please call Apple Travel to handle the booking which travel within 48 hours.'
+				if(lan=='CN'){
+					tipsStr='系统在'+timeSlot+'期间正在维护中，请耐心等待。</br>如您有48小时内的行程需要预订可以联系Apple Travel。'
+				}
+			}
+			$('.tips').html(tipsStr)
+		}
+	})
+</script>
+</html>

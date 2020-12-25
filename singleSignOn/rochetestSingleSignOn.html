@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<title></title>
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/jquery.mloading.css">
+</head>
+<body>
+    <form method="get" action="https://wamqa.roche.com/idp/SSO.saml2" id="myForm">
+		<input type="hidden" id="samlInput" name="SAMLRequest" value="fVPva9swEP1e6P8Q/N0/kq2FijjgJi0xS2cTe4X1y1DlcyKQT65OTrb/foqzQQZTDvTl7t27p6fTnHinepYNdo9b+BiA7ORnp5DYWEiDwSDTnCQx5B0Qs4JV2cuGzaKE9UZbLbQKbm8m/4l8lQZHzdtXuT7mxX1R26L+wC+y5Z/eJH73dL2CIakxDdwEHzHRADmS5WgdLpklYfIQTu/q5IFNE/b57s3TWP4R/Cixkbi7frv3M4jYuq7LsCyq2s96kA2Yr44iDXZa7xREQnde9SUnkgeHbbki8MAyIjDWObHUSEMHpgJzkAK+bTdpsLe2JxbHGpVEiN5FYw0/gIoExjnvNnoncc2xUWCyXsbcna0We7Dufcdi/HRuqKpi5hGwOKfnp0Vgo+XmYjWue8f/ig8Wj8vVj+VeIg9rN3weX9BdTujZyb58VWolxa9JppQ+Lg1w62yyZvC5dIpnbTpu/YKm0XTMyCZsRygbkHoQspXQXOGNF5Pbm7Pgf3/I4jc="/>
+        <input type="submit" value="Submit" class="hide"/>
+    </form>
+</body>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/tools.js"></script>
+<script type="text/javascript" src="../js/jquery.session.js"></script>
+<script type="text/javascript" src="../js/jquery.mloading.js"></script>
+<script type="text/javascript" src="../js/base64.js"></script>
+<script type="text/javascript">
+    var uid = tools.queryString().uid;
+	//语言设置
+	var lang = navigator.language||navigator.userLanguage;//常规浏览器语言和IE浏览器
+	lang = lang.substr(0, 2);//截取lang前2位字符
+	console.log(lang)
+	if(lang == 'zh'){
+		$.session.set('obtLanguage', 'CN')
+	}else{
+		$.session.set('obtLanguage', 'EN')
+	}
+	var mobileAgent = new Array("iphone", "ipod", "ipad", "android", "mobile", "blackberry", "webos", "incognito", "webmate", "bada", "nokia", "lg", "ucweb", "skyfire");
+	var browser = navigator.userAgent.toLowerCase(); 
+	var isMobile = false; 
+	for (var i=0; i<mobileAgent.length; i++){
+	    if (browser.indexOf(mobileAgent[i])!=-1){ 
+	        isMobile = true; 
+	        break;
+	    }
+	}
+	//语言转换
+	function get_lan(m)
+	{
+	    //获取文字
+	    var lan = $.session.get('obtLanguage');     //语言版本
+	    //选取语言文字
+	    switch(lan){
+	        case 'CN':
+	            var t = cn[m];
+	            break;
+	        case 'EN':
+	            var t = en[m];
+	            break;
+	        default:
+	            var t = cn[m];
+	    }
+	    //如果所选语言的json中没有此内容就选取其他语言显示
+	    if(t==undefined) t = cn[m];
+	    if(t==undefined) t = en[m];
+	    return t;
+	}
+	//中英文对象
+	var cn = {
+	    "passwordRemind":"未找到用户信息",
+	}
+	var en = {
+	    "passwordRemind":"User not found",
+    }
+    if(uid){
+		if(!isMobile){
+			$.session.set('ajaxUrl', 'https://online.bcdtravel.cn/SystemAPI_PostSend/api/SystemAPI/PostSend');
+			$.session.set('netLoginId', uid);
+			$.session.set('obtCompany', 'http://online.bcdtravel.cn:8088');
+			$.ajax(
+			{
+				type:'post',
+				url : $.session.get('ajaxUrl'),
+				dataType : 'json',
+				data:{
+					url: $.session.get('obtCompany')+"/SystemService.svc/ProfilePost",
+					jsonStr:'{"key":'+uid+'}'
+				},
+				success : function(data) {
+					var res = JSON.parse(data);
+					console.log(res);
+					tools.addProfileInfo(data);
+					window.location.href = '../../index/index.html';
+				},
+				error : function() {
+				// alert('fail');
+				}
+			}
+			);
+		}
+    }else{
+		// var samlVal = `
+		// fVPva9swEP1e6P8Q/N0/kq2FijjgJi0xS2cTe4X1y1DlcyKQT65OTrb/foqzQQZTDvTl7t27p6fTnHinepYNdo9b+BiA7ORnp5DYWEiDwSDTnCQx5B0Qs4JV2cuGzaKE9UZbLbQKbm8m/4l8lQZHzdtXuT7mxX1R26L+wC+y5Z/eJH73dL2CIakxDdwEHzHRADmS5WgdLpklYfIQTu/q5IFNE/b57s3TWP4R/Cixkbi7frv3M4jYuq7LsCyq2s96kA2Yr44iDXZa7xREQnde9SUnkgeHbbki8MAyIjDWObHUSEMHpgJzkAK+bTdpsLe2JxbHGpVEiN5FYw0/gIoExjnvNnoncc2xUWCyXsbcna0We7Dufcdi/HRuqKpi5hGwOKfnp0Vgo+XmYjWue8f/ig8Wj8vVj+VeIg9rN3weX9BdTujZyb58VWolxa9JppQ+Lg1w62yyZvC5dIpnbTpu/YKm0XTMyCZsRygbkHoQspXQXOGNF5Pbm7Pgf3/I4jc=
+		// `
+		$('body').mLoading("show");
+		// var b = new Base64();
+		// var samlData = b.encode(samlVal)
+		// var samlData = samlVal;
+		// $("#samlInput").val(samlData);
+		// console.log(samlData)
+		// setTimeout(function(){
+		// 	document.getElementById("myForm").submit();
+		// }, 1000);
+		document.getElementById("myForm").submit();
+    }
+</script>
+</html>

@@ -1,0 +1,34 @@
+.mainBackColor{
+	background-color: #222;
+}
+.btnBackColor{
+	background-color: #3083fb;
+}
+.mainFontColor{
+	color: #222;
+}
+.activeFontColor{
+	color: #3083fb;
+}
+.tittleBackColor{
+	background-color: #222;
+}
+body{
+	font-family:Helvetica;
+}
+.progressActiveBack{
+	background-color: #222;
+}
+.progressActiveFont{
+	color: #222;
+}
+.progressBackColor{
+	background-color: #9b9b9b;
+}
+.specificFontColor{
+	color: #3083fb;
+}
+input{
+	box-sizing: border-box;
+	padding-left: 3px;
+}

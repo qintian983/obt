@@ -1,0 +1,997 @@
+/*弹窗*/
+.creditCardPop,
+.PassengerPop,
+.PreferencePop,
+.addOutSettingPop,
+.addReplacementPop,
+.addarrangerPop {
+	width: 490px;
+	min-height: 100px;
+	background-color: #fff;
+	z-index: 101;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: none;
+	/*font-family: PingFangSC-Regular;*/
+}
+
+.creditCardPopTittle,
+.passengerPopTittle,
+.preferencePopTittle,
+.OutSettingPopTittle,
+.ReplacementPopTittle,
+.arrangerPopTittle {
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	box-sizing: border-box;
+	padding-left: 50px;
+	/*font-family: PingFangSC-Regular;*/
+	font-size: 14px;
+	color: #FFFFFF;
+	background-color: #f57c01;
+}
+
+.creditCardPopList,
+.passengerPopList,
+.preferencePopList,
+.arrangerPopList {
+	min-height: 105px;
+}
+
+.creditCardNoInput,
+.creditCardDateInput,
+.popMembershipSelect,
+.popFrequentFlierSelect,
+.popFrequentFlierInput,
+.popTypeSelect,
+.popPrereferenceSelect,
+.popDetailInput {
+	width: 250px;
+	height: 25px;
+	border: 1px solid #979797;
+	margin: 20px 0 0 30px;
+	border-radius: 5px;
+}
+
+.creditCardPopCancel,
+.creditCardPopBtn,
+.passengerPopCancel,
+.passengerPopBtn,
+.preferencePopCancel,
+.preferencePopBtn,
+.OutSettingPopCancel,
+.OutSettingPopBtn,
+.ReplacementPopCancel,
+.ReplacementPopBtn,
+.arrangerPopCancel,
+.arrangerPopBtn {
+	width: 114px;
+	height: 28px;
+	line-height: 28px;
+	/*font-family: PingFangSC-Regular;*/
+	font-size: 14px;
+	color: #FFFFFF;
+	background-color: #f57c01;
+	text-align: center;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+/*外出设置弹窗*/
+.OutSettingPopLi,
+.ReplacementPopLi,
+.arrangerPopLi {
+	margin: 25px 0 0 20px;
+}
+
+.ReplaceStatusSelect {
+	width: 200px;
+	height: 20px;
+	border: 1px solid #979797;
+}
+
+.searchReplaceInput,
+.searchArrangerInput {
+	width: 275px;
+	height: 20px;
+	border: 1px solid #979797;
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+
+.searchReplaceBtn,
+.searchArrangerBtn {
+	width: 80px;
+	height: 22px;
+	border-radius: 5px;
+	background-color: #041E5B;
+	color: #fff;
+	text-align: center;
+	margin-left: 50px;
+	font-size: 14px;
+	line-height: 22px;
+	cursor: pointer;
+}
+
+.ReplacementList,
+.arrangerList {
+	width: 450px;
+	height: 200px;
+	border: 1px solid #979797;
+	margin: 30px 0 20px 20px;
+}
+
+.ReplacementLi,
+.arrangerLi {
+	width: 100%;
+	height: 20px;
+	box-sizing: border-box;
+	padding-left: 100px;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.arrangerLi {
+	padding-left: 50px;
+}
+
+.ReplacementCheckbox,
+.arrangerCheckbox {
+	width: 16px;
+	height: 16px;
+	margin: 2px 10px 0 0;
+}
+
+/*信息列表*/
+.left_box {
+	height: 600px;
+	width: 305px;
+	border-radius: 10px;
+	background-color: #f57c01;
+	position: absolute;
+	top: 20px;
+}
+
+.content ul li {
+	height: 30px;
+	overflow: hidden;
+	border-bottom: 1px dashed #9B9B9B;
+	list-style-type: none;
+	margin: 30px 10px 5px 24px;
+	cursor: pointer;
+}
+
+.content ul li span {
+	color: #000;
+	font-size: 18px;
+	/*font-family: PingFangSC-Regular;*/
+}
+
+.content ul li .white {
+	color: white;
+	font-size: 18px;
+	/*font-family: PingFangSC-Regular;*/
+}
+
+.content ul .first_li {
+	height: 30px;
+	overflow: hidden;
+	border-bottom: 1px dashed white;
+	list-style-type: none;
+	margin: 30px 10px 5px 24px;
+	cursor: pointer;
+	/*单独给第一个li设置样式*/
+}
+
+.content ul li span:hover {
+	color: white;
+	font-size: 18px;
+	/*font-family: PingFangSC-Regular;*/
+}
+
+/*个人基本资料*/
+.info_box {
+	width: 805px;
+	min-height: 600px;
+	border: 1px solid #f57c01;
+	position: absolute;
+	top: 20px;
+	left: 343px;
+	border-radius: 10px;
+	font-size: 15px;
+	color: #404040;
+}
+
+.info_box ul .right_first_li {
+	height: 18px;
+	list-style-type: none;
+	margin: 18px 10px 5px 44px;
+}
+
+.info_box ul .right_second_li {
+	border-bottom: 1px dashed #979797;
+	margin: 0px 10px 5px 44px;
+	height: 5px;
+}
+
+.info_box ul li {
+	height: 18px;
+	list-style-type: none;
+	margin: 10px 10px 20px 44px;
+}
+
+.userName {
+	width: 120px;
+}
+
+.info_box ul li span {
+	color: #404040;
+	font-size: 15px;
+	/*font-family: PingFangSC-Regular;*/
+}
+
+.info_box ul .right_last_li span {
+	color: #EF7908;
+	cursor: pointer;
+}
+
+.info_box ul li .span_edit a {
+	color: #2D6BD2;
+}
+
+.info_box ul li .span_edit .span_edit_a {
+	margin-left: 20px;
+}
+
+.name_input {
+	width: 120px;
+	/*margin-left: 5px;*/
+	border: 0px;
+	border-radius: 2px;
+	color: #404040;
+}
+
+/*个人基本资料*/
+/*联系方式*/
+.contact_box {
+	width: 805px;
+	height: 600px;
+	border: 1px solid #f57c01;
+	position: absolute;
+	top: 20px;
+	left: 343px;
+	border-radius: 10px;
+	color: #404040;
+}
+
+.contact_box ul .contact_first_li {
+	height: 18px;
+	list-style-type: none;
+	margin: 18px 10px 5px 44px;
+}
+
+.contact_box ul .contact_first_li span {
+	font-size: 15px;
+	color: #404040;
+}
+
+.contact_box ul .contact_second_li {
+	border-bottom: 1px dashed #979797;
+	margin: 0px 10px 5px 44px;
+}
+
+.contact_box ul li {
+	height: 18px;
+	list-style-type: none;
+	position: relative;
+	margin: 10px 10px 20px 44px;
+}
+
+.contact_box ul li .span_edit a {
+	color: #2D6BD2;
+	margin-left: 20px;
+}
+
+.contact_box ul li .span_title {
+	font-size: 14px;
+	color: #404040;
+}
+
+.contact_longinput,.gender_longinput,.national_longinput{
+	width: 184px;
+	border: 0px;
+	border-radius: 2px;
+	font-size: 15px;
+	color: #404040;
+	
+	height: 25px;
+}
+
+.contact_email {
+	width: 184px;
+	border: 0px;
+	font-size: 15px;
+	color: #404040;
+}
+
+.contact_box ul li .span_edit .contact_phonesave {
+	font-size: 15px;
+	position: absolute;
+	left: 220px;
+	top: 0;
+}
+
+.contact_box ul li .span_edit .contact_emailsave {
+	font-size: 15px;
+	position: absolute;
+	left: 220px;
+	top: 0;
+}
+
+.contact_box ul li .span_edit .contact_addphone {
+	font-size: 15px;
+	position: absolute;
+	left: 220px;
+	top: 0;
+}
+
+/*联系方式*/
+
+/*证件信息*/
+.document_box {
+	width: 805px;
+	height: 600px;
+	border: 1px solid #f57c01;
+	position: absolute;
+	top: 20px;
+	left: 343px;
+	border-radius: 10px;
+	color: #404040;
+}
+
+.document_first_li {
+	height: 18px;
+	list-style-type: none;
+	margin: 18px 10px 5px 44px;
+}
+
+.document_first_li span {
+	font-size: 15px;
+	color: #404040;
+}
+
+.document_second_li {
+	border-bottom: 1px dashed #979797;
+	width: 703px;
+	margin: 0px 10px 5px 44px;
+}
+
+.decument_table {
+	border: 1px solid #979797;
+	border-collapse: collapse;
+	text-align: center;
+	font-size: 14px;
+	color: #404040;
+	margin: 20px 0 30px 45px;
+}
+
+.decument_table th,
+.decument_table td {
+	border: 1px dashed #979797;
+	height: 34px;
+	line-height: 34px;
+	box-sizing: border-box;
+	padding: 0 6px 0 6px;
+}
+
+.decument_table th {
+	font-family: "PingFangSC-Regular";
+	font-size: 14px;
+	color: #404040;
+}
+
+.decument_table th,
+.decument_table td {
+	border-right: 1px solid #979797;
+}
+
+
+.decument_table th {
+	border: 1px solid #979797;
+}
+
+.document_box .decument_table .span_edit a {
+	color: #2D6BD2;
+}
+
+/*证件信息*/
+
+/*常旅客卡*/
+.frequent_box {
+	width: 805px;
+	height: 600px;
+	border: 1px solid #f57c01;
+	position: absolute;
+	top: 20px;
+	left: 343px;
+	border-radius: 10px;
+	color: #404040;
+}
+
+.addMembership {
+	cursor: pointer;
+	position: absolute;
+	top: 30px;
+	right: 50px;
+}
+
+.frequent_box ul .frequent_first_li {
+	height: 18px;
+	list-style-type: none;
+	margin: 18px 10px 5px 44px;
+	position: relative;
+}
+
+.frequent_box ul .frequent_first_li span {
+	font-size: 15px;
+	color: #404040;
+}
+
+.frequent_box ul .frequent_second_li {
+	border-bottom: 1px dashed #979797;
+	width: 703px;
+	margin: 0px 10px 5px 44px;
+}
+
+.frequent_table {
+	border: 1px solid #979797;
+	border-collapse: collapse;
+	width: 754px;
+	text-align: center;
+	font-size: 14px;
+	color: #404040;
+	margin: 30px 0 0 20px;
+}
+
+.frequent_table th,
+.frequent_table td {
+	border: 1px dashed #979797;
+	height: 34px;
+	line-height: 34px;
+	box-sizing: border-box;
+	padding: 0 6px 0 6px;
+}
+
+.frequent_table th,
+.frequent_table td {
+	border-right: 1px solid #979797;
+}
+
+
+.frequent_table th {
+	border: 1px solid #979797;
+}
+
+.frequent_box .frequent_table .span_edit a {
+	color: #2D6BD2;
+	margin-left: 20px;
+}
+
+/*常旅客卡*/
+
+/*签证信息*/
+.visa_box {
+	width: 805px;
+	height: 600px;
+	border: 1px solid #f57c01;
+	position: absolute;
+	top: 20px;
+	left: 343px;
+	border-radius: 10px;
+	color: #404040;
+}
+
+.visa_box ul .visa_first_li {
+	height: 18px;
+	list-style-type: none;
+	margin: 18px 10px 5px 44px;
+}
+
+.visa_box ul .visa_first_li span {
+	font-size: 15px;
+	color: #404040;
+}
+
+.visa_box ul .visa_second_li {
+	border-bottom: 1px dashed #979797;
+	width: 703px;
+	margin: 0px 10px 5px 44px;
+}
+
+.visa_table {
+	border: 1px solid #979797;
+	border-collapse: collapse;
+	text-align: center;
+	font-size: 15px;
+	color: #404040;
+	margin: 20px 0 0 20px;
+}
+
+.visa_table th,
+.visa_table td {
+	border: 1px dashed #979797;
+	border-right: 1px solid #979797;
+	height: 34px;
+	line-height: 34px;
+	box-sizing: border-box;
+	padding: 0 6px 0 6px;
+}
+
+.vasa-table th {
+	border: 1px solid #979797;
+}
+
+.visa_box .visa_table .span_edit a {
+	color: #2D6BD2;
+	margin-left: 20px;
+}
+
+/*签证信息*/
+
+/*备注信息*/
+.remark_box {
+	width: 805px;
+	min-height: 600px;
+	border: 1px solid #f57c01;
+	position: absolute;
+	top: 20px;
+	left: 343px;
+	border-radius: 10px;
+	color: #404040;
+}
+
+.remark_box ul .remark_first_li {
+	height: 18px;
+	list-style-type: none;
+	margin: 18px 10px 5px 44px;
+}
+
+.remark_box ul .remark_first_li span {
+	fremark_boxont-size: 15px;
+	color: #404040;
+}
+
+.remark_box ul .remark_second_li {
+	border-bottom: 1px dashed #979797;
+	width: 703px;
+	margin: 0px 10px 5px 44px;
+}
+
+.remark_box ul .remark_editli {
+	height: 40px;
+	list-style-type: none;
+	margin: 10px 10px 20px 44px;
+	position: relative;
+}
+
+.remark_editli_div {
+	width: 180px;
+	line-height: 28px;
+	margin-right: 40px;
+	text-align: right;
+	;
+}
+
+.remark_box ul li span {
+	color: #404040;
+	font-size: 15px;
+	/*font-family: PingFangSC-Regular;*/
+}
+
+.remark_box ul li input,
+select {
+	width: 249px;
+	height: 28px;
+	outline: none;
+}
+
+.colorRed {
+	color: red;
+}
+
+.changeRemark {
+	width: 80px;
+	height: 30px;
+	background-color: #f58a00;
+	color: #fff;
+	font-size: 16px;
+	line-height: 30px;
+	text-align: center;
+	margin: 0 auto;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+/*备注信息*/
+
+/*喜好*/
+.like_box {
+	width: 805px;
+	height: 600px;
+	border: 1px solid #f57c01;
+	position: absolute;
+	top: 20px;
+	left: 343px;
+	border-radius: 10px;
+	color: #404040;
+}
+
+.addPreference {
+	cursor: pointer;
+	position: absolute;
+	top: 30px;
+	right: 50px;
+}
+
+.like_box ul .like_first_li {
+	height: 18px;
+	list-style-type: none;
+	margin: 18px 10px 5px 44px;
+	position: relative;
+}
+
+.like_box ul .like_first_li span {
+	font-size: 15px;
+	color: #404040;
+}
+
+.like_box ul .like_second_li {
+	border-bottom: 1px dashed #979797;
+	width: 703px;
+	margin: 0px 10px 5px 44px;
+}
+
+.like_table {
+	border: 1px solid #979797;
+	border-collapse: collapse;
+	width: 754px;
+	text-align: center;
+	font-size: 14px;
+	color: #404040;
+	margin: 30px 0 0 20px;
+}
+
+.like_table th,
+.like_table td {
+	border: 1px dashed #979797;
+	height: 34px;
+	line-height: 34px;
+	box-sizing: border-box;
+	padding: 0 6px 0 6px;
+}
+
+.like_table th,
+.like_table td {
+
+	border-right: 1px solid #979797;
+}
+
+
+.like_table th {
+	border: 1px solid #979797;
+}
+
+
+.like_box .like_table .span_edit a {
+	color: #2D6BD2;
+	margin-left: 20px;
+}
+
+.preferenceRemind {
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	text-align: right;
+	color: #E31836;
+	box-sizing: border-box;
+	padding-right: 30px;
+}
+
+/*喜好*/
+
+/*外出设置*/
+.outOfOffice_box {
+	width: 805px;
+	height: 600px;
+	border: 1px solid #f57c01;
+	position: absolute;
+	top: 20px;
+	left: 343px;
+	border-radius: 10px;
+	color: #404040;
+}
+
+.companyTittle {
+	width: 717px;
+	height: 21px;
+	font-size: 15px;
+	line-height: 18px;
+	margin: 0 auto;
+	margin-top: 20px;
+	border-bottom: 1px dashed #979797;
+}
+
+.settingTabBar {
+	width: 717px;
+	height: 20px;
+	border-bottom: 1px solid #041e58;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.settingTab {
+	min-width: 80px;
+	padding: 0 7px;
+	height: 19px;
+	border: 1px solid #041e58;
+	margin-right: 5px;
+	background-color: #fff;
+	border-radius: 5px 5px 0 0;
+	line-height: 19px;
+	text-align: center;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.settingTabActive {
+	border-bottom: 1px solid #fff;
+	color: #041e58;
+}
+
+.outSettingBody,
+.ReplacementBody,
+.arrangerBody {
+	width: 717px;
+	min-height: 500px;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.outSettingTable,
+.replacementTable,
+.arrangerTable {
+	border: 1px solid #979797;
+	border-collapse: collapse;
+	width: 100%;
+	text-align: center;
+	font-size: 14px;
+	color: #404040;
+}
+
+.outSettingTable th,
+.outSettingTable td,
+.replacementTable th,
+.replacementTable td,
+.arrangerTable th,
+.arrangerTable td {
+	height: 34px;
+	line-height: 34px;
+	box-sizing: border-box;
+	padding: 0 6px 0 6px;
+	border: 1px solid #979797;
+}
+
+.outSettingTable td,
+.replacementTable td,
+.arrangerTable td {
+	border: 1px dashed #979797;
+}
+
+.addOutSetting,
+.addReplacement,
+.addArranger {
+	width: 100px;
+	height: 25px;
+	line-height: 25px;
+	background: #f57c01;
+	color: #fff;
+	text-align: center;
+	border-radius: 5px;
+	margin: 20px 0 0 617px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.deleteVacation,
+.deleteStandby,
+.delArranger {
+	color: #2D6BD2;
+	/*text-decoration: underline;*/
+	cursor: pointer;
+}
+
+/*外出设置*/
+
+/*修改密码*/
+.modify_box {
+	width: 805px;
+	height: 600px;
+	border: 1px solid #f57c01;
+	position: absolute;
+	top: 20px;
+	left: 343px;
+	border-radius: 10px;
+	color: #404040;
+	font-size: 15px;
+}
+
+.modify_box ul .modify_first_li {
+	height: 18px;
+	list-style-type: none;
+	margin: 18px 10px 5px 44px;
+}
+
+.modify_box ul .modify_first_li span {
+	fremark_boxont-size: 15px;
+	color: #404040;
+}
+
+.modify_box ul .modify_second_li {
+	border-bottom: 1px dashed #979797;
+	width: 703px;
+	margin: 0px 10px 5px 44px;
+}
+
+.modify_box ul .modify_editli {
+	margin-top: 10px;
+	height: 35px;
+}
+
+.modify_box ul .modify_editli_two {
+	margin-top: 10px;
+	height: 35px;
+}
+
+.modify_box ul li input {
+	width: 249px;
+	height: 28px;
+}
+
+.changeColor {
+	font-size: 12px;
+	color: #E31836;
+	margin-top: 10px;
+	margin-left: 5px;
+}
+
+.modify_editli_div {
+	width: 180px;
+	line-height: 28px;
+	margin-right: 40px;
+	text-align: right;
+}
+
+.hintInfo {
+	font-size: 12px;
+	color: #404040;
+	margin-left: 60px;
+}
+
+.btn_sure {
+	width: 100px;
+	height: 26px;
+	background-color: #EF7908;
+	border-radius: 3px;
+	color: white;
+	line-height: 13px;
+	font-size: 14px;
+	border: 0;
+}
+
+.btn_sure {
+	margin-left: 300px;
+}
+
+/*信用卡*/
+.creditCard_box {
+	width: 805px;
+	height: 600px;
+	border: 1px solid #3763A0;
+	position: absolute;
+	top: 20px;
+	left: 343px;
+	border-radius: 10px;
+	color: #404040;
+}
+
+.creditCard_box ul .creditCard_first_li {
+	height: 18px;
+	list-style-type: none;
+	margin: 18px 10px 5px 44px;
+	position: relative;
+}
+
+.creditCard_box ul .creditCard_first_li span {
+	font-size: 15px;
+	color: #404040;
+}
+
+.creditCard_box ul .creditCard_second_li {
+	border-bottom: 1px dashed #979797;
+	width: 703px;
+	margin: 0px 10px 5px 44px;
+}
+
+.creditCard_table {
+	border: 1px solid #979797;
+	border-collapse: collapse;
+	width: 754px;
+	text-align: center;
+	font-size: 14px;
+	color: #404040;
+	margin: 30px 0 0 20px;
+}
+
+.creditCard_table th,
+.creditCard_table td {
+	border: 1px solid #979797;
+	height: 34px;
+	line-height: 34px;
+	box-sizing: border-box;
+	padding: 0 6px 0 6px;
+}
+
+.addCreditCard {
+	cursor: pointer;
+	position: absolute;
+	top: 30px;
+	right: 50px;
+}
+
+.creditCardRemind {
+	width: 754px;
+	margin: 15px 0 0 20px;
+	color: #999;
+	font-size: 14px;
+}
+
+.delCreditCard {
+	color: #2D6BD2;
+	cursor: pointer;
+}
+/*3-22*/
+.creditCardPop{
+	width: 700px;
+}
+.creditCardDoc{
+	margin-top: 20px;
+}
+.showCreditDoc{
+	width: 18px;
+	height: 18px;
+	vertical-align:middle;
+	margin: 0 10px 0 30px;
+}
+.creditCardDocBody{
+	margin-top: 10px;
+}
+.reservedDocType,.reservedDocInput,.creditPhoneNumInput {
+    width: 250px;
+    height: 25px;
+    border: 1px solid #979797;
+    margin-top: 20px;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+select[disabled]{
+	background-image: none;
+}
+/* 删除按钮 */
+.span_edit{
+	display: inline-block;
+	width: 50px;
+}

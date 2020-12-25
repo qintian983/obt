@@ -1,0 +1,307 @@
+.searchOrderBody{
+	width: 100%;
+	height: 237px;
+	border: 1px solid #9b9b9b;
+	position: relative;
+}
+.searchOrderLine1,.searchOrderLine2{
+	width: 30px;
+	height: 1px;
+	background-color: #3083FB;
+	position: absolute;
+	right: 315px;
+	top: 53px;
+}
+.searchOrderLine2{
+	top: 123px;
+	right: 595px;
+}
+.searchInputBody{
+	width:220px;
+	height:70px;
+	margin-left:60px;
+	font-size: 14px;
+}
+.searchInputTittle{
+	height: 38px;
+	color: #4a4a4a;
+	line-height: 53px;
+}
+.searchInputMain{
+	height: 30px;
+	border: 1px solid #979797;
+	line-height: 30px;
+}
+.searchInputIcon{
+	width: 30px;
+	height: 26px;
+	margin-top: 2px;
+	border-right: 1px solid #979797;
+}
+.searchInput{
+	width: 180px;
+	height: 30px;
+	border:0;
+	outline: none;
+	padding-left: 10px;
+}
+.searchInputImg{
+	width: 18px;
+	height: 18px;
+	margin: 4px 0 0 6px;
+}
+.searchImg{
+	width: 25px;
+	height: 25px;
+	margin: 10px 0 0 30px;
+}
+.searchOrderBtn{
+	width: 200px;
+	height: 45px;
+	/*background-color: #3083FB;*/
+	line-height: 45px;
+	color: #fff;
+	font-size: 18px;
+	margin-top: 27px;
+	margin: 27px 0 0 500px;
+	text-align: center;
+	border-radius: 6px;
+	cursor: pointer;
+}
+/*订单列表*/
+.orderListBody{
+	margin-top: 18px;
+}
+.orderTabBar{
+	width: 100%;
+	height: 30px;
+	border-bottom: 1px solid #9b9b9b;
+}
+.orderTabBar .orderTab{
+	width: 120px;
+	height: 29px;
+	border:1px solid #9b9b9b;
+	margin-right: 5px;
+	background-color: #fff;
+	border-radius: 5px 5px 0 0;
+	line-height: 29px;
+	text-align: center;
+	cursor: pointer;
+	font-size: 14px;
+	color: #3083fb;
+}
+.orderTabBar .orderTabActive{
+	border-bottom: 1px solid #fff;
+	color: #222;
+}
+/*.orderTableBody{
+	width: 100%;
+	min-height: 300px;
+	margin-top: 20px;
+	border: 1px solid #979797;
+}*/
+/*#orderTable{
+	width: 1200px;
+	border-collapse:collapse;
+	table-layout:fixed;
+}
+#orderTable th{
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	color: #222;
+}
+#orderTable tr{
+	height: 45px;
+	line-height: 45px;
+	font-size: 14px;
+	text-align: center;
+}
+#orderTable td{
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap
+}*/
+.orderTableBody{
+	min-height: 400px;
+	border-top: 1px solid #d8d8d8;
+	/*border-bottom: 1px solid #3083fb;*/
+	margin-top: 16px;
+	margin-bottom: 30px;
+}
+#orderTable{
+	width: 1200px;
+	table-layout:fixed;
+	font-size: 14px;
+	box-sizing: border-box;
+	border-left: 1px solid #d8d8d8;
+	border-right: 1px solid #d8d8d8;
+}
+.table-cell{
+	position: relative;
+    top:40%;
+    transform:translateY(-50%);
+}
+.cellLine{
+	line-height: 35px;
+}
+#orderTable .tr{
+	height: 45px;
+	line-height: 45px;
+	font-size: 14px;
+	/*text-align: center;*/
+	border-bottom: 1px solid #d8d8d8;
+}
+.orderDetailsTable{
+	width: 825px;
+	/*border-right:1px solid #d8d8d8;*/
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+.orderDetailsTable th{
+	height: 0px;
+	line-height: 0px;
+	font-size: 14px;
+	color: #041E5B;
+}
+.orderDetailsTable td{
+	overflow:hidden;
+	line-height: 20px;
+	/*text-overflow:ellipsis;
+	white-space:nowrap;*/
+	/*text-align:center;*/
+	height: 35px;
+}
+.ordersRemind{
+	width: 440px;
+	height:74px;
+	line-height:74px;
+	text-align:center;
+	border-radius:8px;
+	margin:0 auto;
+	color: #fff;
+	background-color:#d9d9d9;
+	font-size:20px;
+	margin-top:120px;
+}
+.oddrowcolor{
+background-color:#f8f8f8;
+}
+.evenrowcolor{
+background-color:#fff;
+}
+/*表格图标*/
+.planeIcon,.hotelIcon,.trainIcon,.carIcon{
+	width: 20px;
+	height: 20px;
+	margin: 3px 0 0 6px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.planeIcon{
+	background-image: url('../../index/images/planeIcon.png');
+}
+.hotelIcon{
+	background-image: url('../../index/images/hotelIcon.png');
+}
+.trainIcon{
+	background-image: url('../../index/images/trainIcon.png');
+}
+.carIcon{
+	background-image: url('../../index/images/carIcon.png');
+}
+.hotelPop{
+	width: 450px;
+	min-height: 500px;
+	background-color: #fff;
+	z-index: 101;
+	position: fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    display: none;
+    border-radius: 8px;
+}
+.hotelPopTittle{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	text-align: center;
+	border-bottom: 1px solid #c9c9c9;
+}
+.closeHotelPop{
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 20px;
+	color: #c9c9c9;
+	position: absolute;
+	top: 0;
+	right: 5px;
+	cursor: pointer;
+}
+.commentLi{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 15px;
+}
+.commentLiTittle{
+	width: 35%;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 20px;
+	box-sizing: border-box;
+}
+.commentLiContent{
+	width: 50%;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 20px;
+	box-sizing: border-box;
+}
+.selectTravelType{
+	width: 150px;
+	height: 20px;
+	margin: 5px 0 0 20px;
+}
+.commentText{
+	width: 410px;
+	height: 150px;
+	margin: 20px 0 0 20px;
+	border: 1px solid #c9c9c9;
+}
+.recommendHotelBody{
+	width: 80%;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	margin: 10px 0 0 20px;
+}
+.isAnonymousText{
+	width: 60%;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 33%;
+	text-align: right;
+	box-sizing: border-box;
+	padding-right: 10px;
+}
+.isAnonymous,.isRecommend{
+	width: 15px;
+	height: 15px;
+	margin-top: 7px;
+	margin-right: 10px;
+}
+.submitComment{
+	width: 70%;
+	height: 30px;
+	line-height: 30px;
+	margin: 15px 0 20px 15%;
+	color: #fff;
+	background-color: #3083FB;
+	text-align: center;
+	border-radius: 8px;
+}

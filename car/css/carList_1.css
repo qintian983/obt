@@ -1,0 +1,394 @@
+body{
+	background-color: #f1f1f1;
+	font-size: 12px;
+}
+input{
+    box-sizing: border-box;
+    padding-left: 4px;
+}
+/*进度条*/
+.progressBar{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 14px;
+	color: #9b9b9b;
+}
+.progressLine{
+	width: 304px;
+	height: 2px;
+	margin:24px 0 0 30px;
+}
+.progressCircle{
+	width: 6px;
+    height: 6px;
+    margin: 22px 10px 0 0;
+    border-radius: 50%;
+}
+/*查询*/
+.searchBody{
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.carDateBody{
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 20px 30px;
+}
+.dateTittle{
+    /* width: 285px; */
+	width: 190px;
+    line-height: 40px;
+}
+.dateInputBody{
+    font-size: 13px;
+}
+#carDeparture,#carArrival{
+    /* width: 210px; */
+    width: 180px;
+    height: 24px;
+    /* margin-right: 73px; */
+    margin-right: 20px;
+    box-sizing: border-box;
+}
+#carFromDate,#carToDate,#carFromHour,#carToHour{
+    margin-right: 10px;
+}
+#carFromMin{
+    margin-right: 15px;
+}
+.vehicleTypeBody{
+    box-sizing: border-box;
+    padding: 20px 30px;
+    font-size: 14px;
+    line-height: 24px;
+    background-color: #fff;
+    margin-top: 4px;
+}
+#vehicleGrade,#vehicleType,#vehicleGear,#vehicleConditioner,#characteristicService{
+    width: 180px;
+    box-sizing: border-box;
+    height: 24px;
+    border-radius: 2px;
+    margin-right: 20px;
+}
+#vehicleConditioner{
+    margin: 0;
+}
+.serviceBody{
+    box-sizing: border-box;
+    padding: 15px 30px;
+    line-height: 24px;
+    font-size: 14px;
+    background-color: #fff;
+    margin-top: 4px;
+    position: relative;
+}
+#searchCarBtn{
+    width:80px;
+    height:26px;
+    background:rgba(245,124,1);
+    border-radius:4px;
+    position: absolute;
+    top: 14px;
+    right: 30px;
+    line-height: 26px;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+/*租车列表*/
+.carBody{
+    margin-top: 10px;
+}
+.siftBody{
+    height: 56px;
+    background:rgba(233,240,246,1);
+    margin:10px 0 4px 0;
+    position: relative;
+}
+.priceSort {
+    width: 80px;
+    height: 24px;
+    line-height: 24px;
+    position: absolute;
+    top: 14px;
+    right: 30px;
+    cursor: pointer;
+}
+.priceSortIcon {
+    width: 11px;
+    height: 13px;
+    margin: 5px 0 0 5px;
+    background-image: url(../../css/images/sortIcon.png);
+    background-position: 0px 0px;
+}
+.carLi{
+    width: 100%;
+    height:162px;
+    margin-bottom: 4px;
+    background: #fff;
+    position: relative;
+}
+.vendorNameImg{
+    margin-top: -5px;
+}
+.vendorName{
+    width: 600px;
+    height: 40px;
+    line-height: 40px;
+    font-size:28px;
+    font-weight: 500;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+.vendorLevel{
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 24px;
+    font-weight: 500;
+    position: absolute;
+    top: 20px;
+    left: 200px;
+}
+.vendorType{
+    width: 200px;
+    height: 20px;
+    line-height: 20px;
+    font-size:14px;
+    position: absolute;
+    top: 74px;
+    left: 30px;
+}
+.vendorTrans{
+    width: 200px;
+    height: 20px;
+    line-height: 20px;
+    font-size:14px;
+    position: absolute;
+    top: 74px;
+    left: 200px;
+}
+.vendorAir{
+    width: 200px;
+    height: 20px;
+    line-height: 20px;
+    font-size:14px;
+    position: absolute;
+    top: 74px;
+    left: 400px;
+}
+.expenseDetails{
+	width: 200px;
+	height: 20px;
+	line-height: 20px;
+	font-size:14px;
+	position: absolute;
+	top: 74px;
+	left:  600px;
+	color: #2D6BD2;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.vendorAllowance{
+    width: 400px;
+    height: 20px;
+    line-height: 20px;
+    font-size:14px;
+    position: absolute;
+    top: 108px;
+    left: 30px;
+}
+.carLiIcon{
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+}
+.carLiLine{
+    width:1px;
+    height:142px;
+    background:rgba(236,236,236,1);
+    position: absolute;
+    top: 10px;
+    left: 823px;
+}
+.carLiPrice{
+    width: 200px;
+    height: 30px;
+    position: absolute;
+    top: 20px;
+    /* left: 894px; */
+    line-height: 30px;
+	
+	right: 0;
+	text-align: right;
+	padding-right: 20px;
+}
+.carLiTotal{
+    width: 200px;
+    height: 22px;
+    position: absolute;
+    top: 60px;
+    /* left: 894px; */
+    line-height: 22px;
+	
+	right: 0;
+	text-align: right;
+	padding-right: 20px;
+}
+.chooseCar{
+    width: 80px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    background-color: rgba(245,124,1);
+    border-radius: 4px;
+    position: absolute;
+    top: 118px;
+    right: 20px;
+    cursor: pointer;
+}
+.totalText{
+    font-size:14px;
+    color:#333333;
+    margin-left: 15px;
+}
+.moreprices{
+	height: 20px;
+	line-height: 20px;
+	font-size:14px;
+	position: absolute;
+	top: 85px;
+	right:  0;
+	padding-right: 20px;
+	text-decoration: underline;
+	cursor: pointer;
+	color:rgba(45,107,210,1);
+}
+/* 费用明细 */
+.rateDetailsFix{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.2);
+	z-index: 100;
+}
+.rateDetails{
+	width:640px;
+	height:426px;
+	background:rgba(255,255,255,1);
+	border-radius:16px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -213px;
+	margin-left: -320px;
+	overflow: hidden;
+	padding: 0 30px;
+}
+.rateDetails .rateTitle{
+	height: 50px;
+	line-height: 50px;
+	color: #094B90;
+	font-size: 20px;
+	text-align: center;
+	border-bottom: 1px #50779a dotted;
+	position: relative;
+}
+.rateDetails .closeBtn{
+	position: absolute;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+	width: 20px;
+}
+.headline{
+	height:20px;
+	font-size:14px;
+	font-weight:800;
+	color:rgba(51,51,51,1);
+	line-height:20px;
+	    padding: 12px 0;
+}
+.detailList{
+	font-size:14px;
+	color:rgba(102,102,102,1);
+	line-height:20px;
+	
+	max-height: 175px;
+	overflow-y: auto;
+}
+
+.clearfix{
+	zoom: 1;
+}
+.clearfix::after{
+	content: " ";
+	display: block;
+	height: 0;
+	clear: both;
+}
+/* 表格 */
+.detaileTable{
+	width: 100%;
+}
+.detaileTable tr:first-of-type{
+	background-color: #E5E5E5;
+	color: #333333;
+	font-size: 14px;
+	font-weight: 800;
+	line-height: 20px;
+}
+.detaileTable tr:first-of-type span{
+	color: #999999;
+	font-size: 12px;
+	font-weight: 400;
+}
+.detaileTable td{
+		height: 32px;
+		text-align: center;
+		border-top:1px solid #F3F3F3;
+		border-left:1px solid #F3F3F3;
+	}
+.detaileTable tr td:last-of-type{
+		border-right:1px solid #F3F3F3;
+		text-align: left;
+		padding: 0 12px;
+	}
+.detaileTable tr:last-of-type td{
+		border-bottom:1px solid #F3F3F3;
+	}
+.detaileTable tr:first-of-type td{
+	text-align: center;
+}
+/* 协议价 */
+.protocolBody{
+	width: 60px;
+    height: 40px;
+    position: absolute;
+    right: -60px;
+    top: 20px;
+}
+.protocolText{
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	font-size: 13px;
+	background-color: #8dc73f;
+	color:#fff;
+	text-align: center;
+}
+.triangleTopRight{
+	width: 0;
+    height: 0;
+    border-top: 7px solid #446a10;
+    border-right: 60px solid transparent;
+}

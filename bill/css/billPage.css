@@ -1,0 +1,122 @@
+#main{
+	margin-top: 15px;
+}
+.billHeader{
+	width: 100%;
+	height: 560px;
+}
+.billLogoImg{
+	width: 190px;
+	height: 78px;
+	/*background-color: green;*/
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	background-size: 100% 100%;
+}
+.companyTittle{
+	width: 600px;
+	height: 100px;
+	line-height: 50px;
+	/*background-color: red;*/
+	position: absolute;
+	top: 0;
+	left: 300px;
+	text-align: center;
+	font-size: 22px;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+.companyInfo{
+	width: 260px;
+	min-height: 100px;
+	line-height: 20px;
+	position: absolute;
+	top: 0;
+	right: 20px;
+	/*background-color: yellow;*/
+	font-size: 12px;
+}
+.billContent{
+	width: 100%;
+	position: absolute;
+	top: 150px;
+	left: 0;
+}
+.billTittle{
+	width: 100%;
+	text-align: center;
+	line-height: 30px;
+	/*position: absolute;
+	left: 0;*/
+	font-size: 26px;
+	/*top: 150px;*/
+	font-weight: bold;
+	font-style: italic;
+	letter-spacing: 10px;
+}
+.toBody{
+	font-size: 14px;
+	line-height: 30px;
+	width: 500px;
+	min-height: 30px;
+	/*background-color: pink;*/
+	/*position: absolute;*/
+	margin-left: 20px;
+	/*top: 250px;*/
+}
+.toTittle,.attnTittle{
+	width: 80px;
+}
+.attnBody{
+	font-size: 14px;
+	line-height: 30px;
+	width: 500px;
+	min-height: 30px;
+	/*background-color: blue;*/
+	/*position: absolute;
+	left: 20px;*/
+	margin: 70px 0 0 20px;
+	/*top: 350px;*/
+}
+.billInfo{
+	width: 280px;
+	min-height: 200px;
+	/*position: absolute;
+	right: 20px;
+	top: 250px;*/
+	margin-top: 60px;
+	font-size: 14px;
+	/*background-color: purple;*/
+}
+.billList{
+	border-top: 1px solid #000;
+	box-sizing: border-box;
+	padding-bottom: 240px;
+	width: 1160px;
+	margin-left: 20px;
+	line-height: 30px;
+}
+.billListTittle{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #000;
+	font-size: 14px;
+	margin-bottom: 15px;
+}
+.remarkInfo{
+	width: 1160px;
+	margin-left: 20px;
+	box-sizing: border-box;
+	line-height: 30px;
+	border-bottom: 1px solid #000;
+	padding-bottom: 20px;
+}
+.totalFare{
+	text-align: right;
+	padding-right: 20px;
+	box-sizing: border-box;
+	margin: 30px 0 20px 0;
+	line-height: 30px;
+}

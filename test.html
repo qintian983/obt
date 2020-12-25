@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+	<title>首页</title>
+</head>
+<body>
+  <input type="file" onchange='handleInputChange(event)' id="file">
+  <button class="upLoadFile"></button>
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/link.js"></script>
+<!-- <script type="text/javascript" src="../js/tools.js"></script> -->
+<!-- <script type="text/javascript" src="../js/jquery.session.js"></script> -->
+<script type="text/javascript">
+  // (function (doc, win) {
+  //     var docEl = doc.documentElement,
+  //       resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+  //       recalc = function () {
+  //         var clientWidth = docEl.clientWidth;
+  //         if (!clientWidth) return;
+  //         if (clientWidth > 750) clientWidth = 750;
+  //         docEl.style.fontSize = (clientWidth / 3.75) + 'px';
+  //       };
+  //     if (!doc.addEventListener) return;
+  //     win.addEventListener(resizeEvt, recalc, false);
+  //     doc.addEventListener('DOMContentLoaded', recalc, false);
+  //   })(document, window);
+    
+  //   function handleInputChange(event){
+  //     console.log(event);
+  //     // 获取当前选中的文件
+  //     var file = $("#file")[0].files[0];
+  //     console.log(file);
+  //     var fileSize = 0;   
+  //     var filetypes =[".xls",".xlsx",".xlsm",".xlt",".ppt",".pptx",".doc",".docx",".rtf",".wps",".pdf",".jpg",".bmp",".png",".gif",".eml",".msg",".txt"];   
+  //     var filepath = event.target.value;
+  //     var filemaxsize = 1024*10;//10M
+  //     if(filepath){
+  //       var isnext = false;
+  //       var fileend = filepath.substring(filepath.indexOf("."));
+  //       if(filetypes && filetypes.length>0){
+  //         for(var i =0; i<filetypes.length;i++){   
+  //           if(filetypes[i]==fileend){   
+  //             isnext = true;   
+  //             break;
+  //           }
+  //         }
+  //       }
+  //       if(!isnext){
+  //         alert("不接受此文件类型！");   
+  //         event.target.value ="";
+  //         return false;
+  //       }
+  //       fileSize = $("#file")[0].files[0].size;
+  //       var size = fileSize / 1024;
+  //       if(size>filemaxsize){
+  //         alert("附件大小不能大于"+filemaxsize/1024+"M！");
+  //         event.target.value ="";
+  //         return false;
+  //       }
+  //     }else{
+  //       return false;
+  //     }
+  //     // var formData = new FormData();
+  //     // formData.append('file', file);
+  //     // formData.append('orderNo', '201852121');
+  //     // $.ajax(
+  //     //   {
+  //     //     type:'post',
+  //     //     url : 'http://localhost:23638/OrderController/UploadFilePost', 
+  //     //     dataType : 'json',
+  //     //     processData: false,
+  //     //     mimeType:"multipart/form-data",
+  //     //     data:formData,
+  //     //     success : function(data) {
+  //     //         console.log(data);
+  //     //     },
+  //     //     error : function() {
+  //     //       // alert('fail');
+  //     //     }
+  //     //   } 
+  //     // );
+  //   }
+  //   $('.upLoadFile').click(function() {
+  //       if ($('#file')[0].files.length != 1) {
+  //           alert('请先选择需要上传的文件!')
+  //           return;
+  //       }else{
+          
+  //       }
+  //       var formData = new FormData();
+  //       var file_obj = $('#file')[0].files[0]
+  //       console.log(file_obj)
+  //       formData.append('orderNo', '201906102756');
+  //       formData.append('companyID', 'X4ZW');
+  //       formData.append('file', file_obj);
+  //       $.ajax({
+  //           url: 'https://online.bcdtravel.cn/SystemAPI_PostSend/api/SystemAPI/UploadFilePost', 
+  //           type: 'POST',
+  //           data: formData,
+  //           processData: false, //tell jQuery not to process the data
+  //           contentType: false, //tell jQuery not to set contentType。
+  //           success: function(res) {
+  //             console.log(res);
+  //             if(res.isSuccess){
+  //               alert("上传成功")
+  //             }else{
+  //               alert(res.errorMsg);
+  //             }
+  //           },
+  //           error: function () {
+  //               alert('fail');
+  //           }
+  //       })
+
+  //   })
+
+    // $.ajax(
+    //   {
+    //       type: 'post',
+    //       url: 'http://localhost:23638/OrderController/UploadFilePost',
+    //       dataType: 'json',
+    //       data: formData,
+    //       processData: false,
+    //       contentType: false
+    //       success: function (data) {
+    //           console.log(data);
+    //       },
+    //       error: function () {
+    //           // alert('fail');
+    //       }
+    //   }
+    // );
+</script>
+</html>

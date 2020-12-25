@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<title></title>
+		<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+		<link rel="stylesheet" type="text/css" href="../css/common.css">
+		<link rel="stylesheet" type="text/css" href="../css/jquery.mloading.css">
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-migrate-1.2.1.js"></script>
+	<script type="text/javascript" src="../js/tools.js"></script>
+	<script type="text/javascript" src="../js/jquery.mloading.js"></script>
+	<script type="text/javascript" src="../js/jquery.session.js"></script>
+	<script type="text/javascript" src="../js/bgstretcher.js"></script>
+	<script type="text/javascript">
+		var Url = tools.queryString().url;
+		var orderNo = tools.queryString().orderNo;
+		var CustomerID = tools.queryString().CustomerID;
+		var CompanyID = tools.queryString().CompanyID;
+		var Language = tools.queryString().Language;
+		// console.log(customerId);
+		$.session.set('obtLanguage', Language);
+		$.session.set('obtCompany', Url);
+		$.session.set('ajaxUrl', 'http://106.15.170.73:1344/api/SystemAPI/PostSend');
+		$(function() {
+			if (Url && orderNo && CustomerID && CompanyID && Language) {
+				$('body').mLoading("show");
+				$.ajax({
+					type: 'post',
+					url: $.session.get('ajaxUrl'),
+					dataType: 'json',
+					data: {
+						url: Url + "/SystemService.svc/LoginByCustomerIDPost",
+						jsonStr: '{"CompanyID":"' + CompanyID + '","Language":"' + $.session.get('obtLanguage') + '","CustomerID":"' +
+							CustomerID + '"}'
+					},
+					success: function(data) {
+						console.log(data);
+						$('body').mLoading("hide");
+						if (data == '""') {
+							alert("null");
+						} else if (data == '"加密字段已过期，验证失败"') {
+							alert(data);
+						} else {
+							$.session.set('netLoginId', data);
+							loginProfile(data);
+						}
+					},
+					error: function() {
+						// alert('fail');
+					}
+				});
+			}
+		})
+
+		function loginProfile(data) {
+			$('body').mLoading("show");
+			$.ajax({
+				type: 'post',
+				url: $.session.get('ajaxUrl'),
+				dataType: 'json',
+				data: {
+					url: $.session.get('obtCompany') + "/SystemService.svc/ProfilePost",
+					jsonStr: '{"key":' + data + '}'
+				},
+				success: function(data) {
+					var res = JSON.parse(data);
+					console.log(res);
+					if (res.DocumentsDetail.length == 0 || res.Phone == "" || res.Email == "" || res.Phone == null || res.Email ==
+						null) {
+						var ComplementState = true;
+					} else {
+						var ComplementState = false;
+					}
+
+					var companyPhone = ''
+					if (res.CompanyPhoneList == null || res.CompanyPhoneList.length == 0) {
+						// console.log('没有公司电话')
+					} else {
+						companyPhone = res.CompanyPhoneList[0].Telephone
+					}
+					var ProfileInfo = {
+						"customerId": res.ID,
+						"isTrain": res.isTrain,
+						"onlineStyle": res.onlineStyle,
+						"loginOutUrl": res.loginOutUrl,
+						"companyId": res.CompanyID,
+						"NeedApproval": res.NeedApproval,
+						"isCodeShare": res.isCodeShare,
+						"QueryDomesticTicketsWithTime": res.QueryDomesticTicketsWithTime,
+						"NeedUpdatePassword": res.NeedUpdatePassword,
+						"ComplementState": ComplementState,
+						"NoQueryOrder": res.NoQueryOrder,
+						"ChainCode": res.ChainCode,
+						"HotelAddCohabitation": res.HotelAddCohabitation,
+						"IsBCD": res.IsBCD,
+						"NoShowHotelCommentsFromCompany": res.NoShowHotelCommentsFromCompany,
+						"HideChangePassword": res.HideChangePassword,
+						"CompanyPhone": companyPhone,
+						"IsHideRemarkInput": res.IsHideRemarkInput,
+						"HotelJumpHRS": res.HotelJumpHRS,
+						"HotelJumpHRS_Url": res.HotelJumpHRS_Url,
+						"HideInterChange": res.HideInterChange,
+						"ChangeSameAirline": res.ChangeSameAirline,
+						"HotelGKBooking": res.HotelGKBooking,
+						"InterSingleReason": res.InterSingleReason,
+						"SingleAirCombine": res.SingleAirCombine,
+						"isReport": res.isReport,
+						"DomesticHideMore": res.DomesticHideMore,
+						"ManualPriceNoBook": res.ManualPriceNoBook,
+						"WechatPay": res.WechatPay,
+						"AliPay": res.AliPay,
+						'SearchInterAirWTime': res.SearchInterAirWTime,
+						'DomesticHideAllDay': res.DomesticHideAllDay,
+						'advertiseChainCompany':res.advertiseChainCompany,
+						'advertiseCompany':res.advertiseCompany,
+						"ShowDomesticTimeSlt":res.ShowDomesticTimeSlt,
+					}
+					$.session.set('ProfileInfo', JSON.stringify(ProfileInfo));
+					var applicationDetailInfo = {
+						'orderNo': orderNo,
+						'IsHistory': false,
+						'Email': true,
+					}
+					$.session.set('applicationDetailInfo', JSON.stringify(applicationDetailInfo));
+					window.location.href = '../../application/applicationDetail.html';
+				},
+				error: function() {
+					// alert('fail');
+				}
+			});
+		}
+	</script>
+</html>
